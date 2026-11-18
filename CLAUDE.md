@@ -2,6 +2,8 @@
 
 Portfólio pessoal. Next.js 15 (App Router) + TypeScript + Tailwind CSS 4.
 
+**Leia `docs/CONTEXTO.md` antes de começar.** Ele traz os fatos da carreira, as decisões já tomadas e as pendências.
+
 ## Onde fica cada coisa
 - Todo o texto (PT e EN): `src/content/content.ts`. Sempre altere os dois idiomas juntos.
 - Seções da página: `src/components/Home.tsx`
