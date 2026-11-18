@@ -84,13 +84,7 @@ body {
 .rise-2 { animation-delay: 0.16s; }
 .rise-3 { animation-delay: 0.24s; }
 
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 60%, transparent); }
-  50% { box-shadow: 0 0 0 6px transparent; }
-}
-.pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .rise, .pulse-dot { animation: none; }
+  .rise { animation: none; }
 }

@@ -14,7 +14,7 @@ export function renderOg(locale: Locale) {
           <div style={{ fontSize: 36, color: "#949dab", marginTop: 12 }}>{h.eyebrow}</div>
         </div>
         <div style={{ display: "flex", gap: 14 }}>
-          {["Go", "Next.js", "React", "Redis", "PostgreSQL", "Prometheus"].map((t) => (
+          {["Go", "Next.js", "React", "Redis", "PostgreSQL", "TypeScript"].map((t) => (
             <div key={t} style={{ display: "flex", fontSize: 24, padding: "8px 18px", border: "2px solid #242a35", borderRadius: 10, color: "#e7eaf0" }}>{t}</div>
           ))}
         </div>

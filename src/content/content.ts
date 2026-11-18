@@ -37,7 +37,6 @@ export type Content = {
     skip: string;
   };
   hero: {
-    status: string;
     eyebrow: string;
     title: string;
     titleAccent: string;
@@ -105,7 +104,7 @@ const pt: Content = {
   meta: {
     title: "João Pedro Lira | Desenvolvedor Fullstack (Go + Next.js)",
     description:
-      "Desenvolvedor Fullstack na PontoGO. APIs em Go com concorrência e cache em Redis, interfaces em React/Next.js, observabilidade com Grafana e Prometheus e integrações com LLMs.",
+      "Desenvolvedor Fullstack na PontoGO. APIs em Go com concorrência e cache em Redis, interfaces em React/Next.js, apps em React Native e integrações com LLMs.",
     ogLocale: "pt_BR",
   },
   nav: [
@@ -123,12 +122,11 @@ const pt: Content = {
     skip: "Pular para o conteúdo",
   },
   hero: {
-    status: "Aberto a novas oportunidades",
     eyebrow: "Desenvolvedor Fullstack · Go + Next.js",
     title: "Faço backends rápidos em Go",
     titleAccent: "e interfaces que as pessoas entendem.",
     lead:
-      "Sou fullstack na PontoGO. Trabalho com APIs em Go, cache em Redis, monitoramento com Grafana e Prometheus e apps em React, Next.js e React Native rodando em produção. Me formei em Psicologia, e isso me deixou com o costume de entender o problema antes de pensar no código.",
+      "Sou fullstack na PontoGO. Trabalho com APIs em Go, cache em Redis e apps em React, Next.js e React Native rodando em produção. Me formei em Psicologia, e isso me deixou com o costume de entender o problema antes de pensar no código.",
     ctaPrimary: "Ver projetos",
     ctaSecondary: "Baixar currículo",
     facts: [
@@ -150,8 +148,8 @@ const pt: Content = {
         body: "Escrevo e otimizo APIs em Go usando concorrência para cortar latência nos fluxos mais usados.",
       },
       {
-        title: "Observabilidade",
-        body: "Monitoro a plataforma com Grafana e Prometheus, o que deixa claro onde estão os problemas antes que o usuário perceba.",
+        title: "Deploy e publicação",
+        body: "Sou responsável pelos deploys e pela publicação dos aplicativos em produção.",
       },
       {
         title: "Pessoas",
@@ -173,7 +171,7 @@ const pt: Content = {
           "Implementei cache com Redis na plataforma e reduzi bastante os custos de infraestrutura.",
           "Desenvolvo e otimizo APIs em Go, usando concorrência para ganhar desempenho e baixar a latência.",
           "Faço o fullstack em React, Next.js e TailwindCSS e os apps mobile em React Native.",
-          "Cuido da observabilidade da plataforma com Grafana e Prometheus.",
+          "Usei Grafana e Prometheus para acompanhar as métricas da plataforma.",
           "Sou responsável por deploys e pela publicação de aplicativos em produção.",
           "Modelo e integro dados no Firestore e corrijo bugs para manter o sistema estável.",
           "Treino e acompanho estagiários e participo das entrevistas técnicas.",
@@ -324,7 +322,7 @@ const pt: Content = {
     principles: [
       { title: "Problema antes da ferramenta", body: "Primeiro entendo o que precisa ser resolvido. A tecnologia vem depois." },
       { title: "Simples e observável", body: "Prefiro código que qualquer pessoa do time consegue ler, com métricas para saber como ele se comporta em produção." },
-      { title: "Entrega de ponta a ponta", body: "Vou do banco de dados à interface, passando por deploy e monitoramento." },
+      { title: "Entrega de ponta a ponta", body: "Vou do banco de dados à interface, passando pelo deploy." },
     ],
   },
   contact: {
@@ -340,7 +338,7 @@ const en: Content = {
   meta: {
     title: "João Pedro Lira | Fullstack Developer (Go + Next.js)",
     description:
-      "Fullstack Developer at PontoGO. Concurrent Go APIs with Redis caching, React/Next.js interfaces, observability with Grafana and Prometheus, and LLM integrations.",
+      "Fullstack Developer at PontoGO. Concurrent Go APIs with Redis caching, React/Next.js interfaces, React Native apps, and LLM integrations.",
     ogLocale: "en_US",
   },
   nav: [
@@ -358,12 +356,11 @@ const en: Content = {
     skip: "Skip to content",
   },
   hero: {
-    status: "Open to new opportunities",
     eyebrow: "Fullstack Developer · Go + Next.js",
     title: "I build fast Go backends",
     titleAccent: "and interfaces people understand.",
     lead:
-      "I'm a fullstack developer at PontoGO. I work on Go APIs, Redis caching, Grafana and Prometheus monitoring, and React, Next.js and React Native apps that run in production. I have a degree in Psychology, which left me with the habit of understanding the problem before thinking about code.",
+      "I'm a fullstack developer at PontoGO. I work on Go APIs, Redis caching, and React, Next.js and React Native apps that run in production. I have a degree in Psychology, which left me with the habit of understanding the problem before thinking about code.",
     ctaPrimary: "See projects",
     ctaSecondary: "Download résumé",
     facts: [
@@ -378,7 +375,7 @@ const en: Content = {
     items: [
       { title: "Redis caching", body: "I added a cache layer to PontoGO's platform and infrastructure costs dropped significantly." },
       { title: "Concurrent Go", body: "I write and tune Go APIs, using concurrency to cut latency on the busiest flows." },
-      { title: "Observability", body: "I monitor the platform with Grafana and Prometheus, so we see problems before users do." },
+      { title: "Deploys and releases", body: "I own deployments and app releases to production." },
       { title: "People", body: "I train and mentor interns and help run technical interviews." },
     ],
   },
@@ -396,7 +393,7 @@ const en: Content = {
           "Added Redis caching to the platform, which significantly reduced infrastructure costs.",
           "Build and tune Go APIs, using concurrency for better throughput and lower latency.",
           "Do fullstack work in React, Next.js and TailwindCSS, plus mobile apps in React Native.",
-          "Handle platform observability with Grafana and Prometheus.",
+          "Used Grafana and Prometheus to track platform metrics.",
           "Own deployments and app releases to production.",
           "Model and integrate data in Firestore and fix bugs to keep the system stable.",
           "Train and mentor interns and take part in technical interviews.",
@@ -520,7 +517,7 @@ const en: Content = {
     principles: [
       { title: "Problem before tool", body: "I start by understanding what needs to be solved. The technology comes after." },
       { title: "Simple and observable", body: "I prefer code anyone on the team can read, with metrics that show how it behaves in production." },
-      { title: "End-to-end delivery", body: "I work from the database to the interface, including deploys and monitoring." },
+      { title: "End-to-end delivery", body: "I work from the database to the interface, including deploys." },
     ],
   },
   contact: {

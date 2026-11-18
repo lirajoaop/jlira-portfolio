@@ -81,11 +81,7 @@ function Hero({ locale }: { locale: Locale }) {
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-60" aria-hidden />
       <div className="relative mx-auto grid max-w-6xl gap-12 px-4 pt-16 pb-20 sm:px-6 sm:pt-24 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-10">
         <div>
-          <p className="rise inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs text-muted">
-            <span className="pulse-dot size-2 rounded-full bg-ok" aria-hidden />
-            {h.status}
-          </p>
-          <p className="rise rise-1 mt-6 font-mono text-sm text-accent">{h.eyebrow}</p>
+          <p className="rise font-mono text-sm text-accent">{h.eyebrow}</p>
           <h1 className="rise rise-1 mt-3 text-4xl leading-[1.08] font-semibold tracking-tight text-balance sm:text-5xl lg:text-[3.4rem]">
             {h.title} <span className="text-muted">{h.titleAccent}</span>
           </h1>
@@ -142,7 +138,6 @@ function CodeCard({ locale }: { locale: Locale }) {
           {"  "}<F>Role</F>:{"     "}<S>{'"Fullstack @ PontoGO"'}</S>,{"\n"}
           {"  "}<F>Backend</F>:{"  "}[]<K>string</K>{"{"}<S>{'"Go"'}</S>, <S>{'"Redis"'}</S>, <S>{'"Postgres"'}</S>{"}"},{"\n"}
           {"  "}<F>Frontend</F>: []<K>string</K>{"{"}<S>{'"Next.js"'}</S>, <S>{'"React"'}</S>, <S>{'"RN"'}</S>{"}"},{"\n"}
-          {"  "}<F>Observe</F>:{"  "}[]<K>string</K>{"{"}<S>{'"Grafana"'}</S>, <S>{'"Prometheus"'}</S>{"}"},{"\n"}
           {"  "}<F>Learning</F>: <S>{pt ? '"Eng. de Software + IA"' : '"Software Eng. + AI"'}</S>,{"\n"}
           {"}"}{"\n\n"}
           <K>func</K> main() {"{"}{"\n"}
