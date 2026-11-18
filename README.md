@@ -1,23 +1,23 @@
-# Portfólio: João Pedro Lira
+# Portfolio: João Pedro Lira
 
-Site pessoal em **Next.js 15 (App Router) + TypeScript + Tailwind CSS 4**, bilíngue (PT em `/`, EN em `/en`), com tema claro e escuro e todas as páginas geradas de forma estática.
+Personal website built with **Next.js 15 (App Router) + TypeScript + Tailwind CSS 4**. It's bilingual (PT at `/`, EN at `/en`), has light and dark themes, and every page is statically generated.
 
-## Rodando localmente
+## Running locally
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # build de produção
+npm run build    # production build
 ```
 
-## Como atualizar o conteúdo
+## Updating the content
 
-**Todo o texto fica em `src/content/content.ts`.** Experiências, projetos, stack e formação estão nesse arquivo, em PT e EN. Para adicionar um projeto, inclua um item em `projects.items` nos dois idiomas e coloque as imagens em `public/projects/`.
+**All copy lives in `src/content/content.ts`.** Experience, projects, stack and education are all in that file, in PT and EN. To add a project, add an item to `projects.items` in both languages and put its images in `public/projects/`.
 
-- Currículo para download: `public/curriculo-joao-pedro-lira.pdf`
-- Componentes: `src/components/`
+- Downloadable résumé: `public/curriculo-joao-pedro-lira.pdf`
+- Components: `src/components/`
 - SEO (metadata, Open Graph, JSON-LD, sitemap, robots): `src/lib/shell.tsx`, `src/lib/og.tsx`, `src/app/sitemap.ts`
 
-## Deploy
+## Deployment
 
-Pela Vercel: importe o repositório e o Next.js é detectado automaticamente, sem nenhuma configuração.
+On Vercel: import the repository and Next.js is detected automatically, with no extra configuration.
