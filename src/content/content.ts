@@ -328,7 +328,7 @@ const pt: Content = {
   contact: {
     label: "Contato",
     title: "Vamos conversar?",
-    body: "Estou aberto a vagas de Fullstack ou Backend com Go, em equipes que se preocupam com qualidade e com quem usa o produto. Pode ser remoto ou em Fortaleza.",
+    body: "Gosto de conversar sobre Go, backend e produtos bem feitos. Se quiser trocar uma ideia, me chama.",
     email: "Enviar e-mail",
   },
   footer: "Feito com Next.js e Tailwind CSS, publicado na Vercel.",
@@ -523,7 +523,7 @@ const en: Content = {
   contact: {
     label: "Contact",
     title: "Let's talk",
-    body: "I'm open to Fullstack or Backend roles with Go, on teams that care about quality and about the people using the product. Remote or in Fortaleza.",
+    body: "I enjoy talking about Go, backend and well-built products. If you'd like to swap ideas, reach out.",
     email: "Send an email",
   },
   footer: "Built with Next.js and Tailwind CSS, deployed on Vercel.",
