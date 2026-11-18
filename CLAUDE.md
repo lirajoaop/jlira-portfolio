@@ -1,19 +1,18 @@
 # jlira-portfolio
 
-Portfólio pessoal. Next.js 15 (App Router) + TypeScript + Tailwind CSS 4.
+Personal portfolio. Next.js 15 (App Router) + TypeScript + Tailwind CSS 4.
 
-**Leia `docs/CONTEXTO.md` antes de começar.** Ele traz os fatos da carreira, as decisões já tomadas e as pendências.
+## Where things live
+- All copy (PT and EN): `src/content/content.ts`. Always update both languages together.
+- Page sections: `src/components/Home.tsx`
+- Base components (Section, Tag, ButtonLink, icons): `src/components/ui.tsx`
+- Metadata, JSON-LD and theme: `src/lib/shell.tsx`
+- Routes: `src/app/(pt)` serves `/` and `src/app/(en)/en` serves `/en`
+- Project images: `public/projects/`
+- Résumé: `public/curriculo-joao-pedro-lira.pdf`
 
-## Onde fica cada coisa
-- Todo o texto (PT e EN): `src/content/content.ts`. Sempre altere os dois idiomas juntos.
-- Seções da página: `src/components/Home.tsx`
-- Componentes base (Section, Tag, ButtonLink, ícones): `src/components/ui.tsx`
-- Metadata, JSON-LD e tema: `src/lib/shell.tsx`
-- Rotas: `src/app/(pt)` serve `/` e `src/app/(en)/en` serve `/en`
-- Imagens dos projetos: `public/projects/`
-- Currículo: `public/curriculo-joao-pedro-lira.pdf`
-
-## Regras
-- Não invente métricas nem experiências. Use só o que está no currículo ou nos repositórios.
-- Cores apenas pelos tokens de `src/app/globals.css` (claro e escuro).
-- Antes de concluir, rode `npm run build`.
+## Rules
+- Don't invent metrics or experience. Use only what's in the résumé or the repositories.
+- Colors only through the tokens in `src/app/globals.css` (light and dark).
+- Code, comments, commits and PRs in English.
+- Run `npm run build` before finishing.
