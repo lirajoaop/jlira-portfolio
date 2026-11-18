@@ -4,7 +4,7 @@
 export type Locale = "pt" | "en";
 
 export const site = {
-  url: "https://jlira-portfolio.vercel.app",
+  url: "https://jplira.vercel.app",
   name: "João Pedro Lira",
   email: "contact.dev.jplira@gmail.com",
   github: "https://github.com/lirajoaop",
