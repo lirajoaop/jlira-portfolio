@@ -1,5 +1,14 @@
 # Portfolio: João Pedro Lira
 
+[![CI](https://github.com/lirajoaop/jlira-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/lirajoaop/jlira-portfolio/actions/workflows/ci.yml)
+
+**Live:** [jplira.vercel.app](https://jplira.vercel.app)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png">
+  <img src="docs/screenshot-light.png" alt="Home page of jplira.vercel.app: hero with the JP monogram, headline and a Go code card">
+</picture>
+
 Personal website built with **Next.js 15 (App Router) + TypeScript + Tailwind CSS 4**. It's bilingual (PT at `/`, EN at `/en`), has light and dark themes, and every page is statically generated.
 
 ## Running locally
@@ -8,6 +17,7 @@ Personal website built with **Next.js 15 (App Router) + TypeScript + Tailwind CS
 npm install
 npm run dev      # http://localhost:3000
 npm run build    # production build
+npm run typecheck  # TypeScript check (run after a build)
 ```
 
 ## Updating the content
