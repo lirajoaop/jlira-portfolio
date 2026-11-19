@@ -2,11 +2,11 @@
 
 [![CI](https://github.com/lirajoaop/jlira-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/lirajoaop/jlira-portfolio/actions/workflows/ci.yml)
 
-**Live:** [jplira.vercel.app](https://jplira.vercel.app)
+**Live:** [jplira.dev](https://jplira.dev)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png">
-  <img src="docs/screenshot-light.png" alt="Home page of jplira.vercel.app: hero with the JP monogram, headline and a Go code card">
+  <img src="docs/screenshot-light.png" alt="Home page of jplira.dev: hero with the JP monogram, headline and a Go code card">
 </picture>
 
 Personal website built with **Next.js 15 (App Router) + TypeScript + Tailwind CSS 4**. It's bilingual (PT at `/`, EN at `/en`), has light and dark themes, and every page is statically generated.
