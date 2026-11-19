@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { content, site, type Locale } from "@/content/content";
 import "@/app/globals.css";
 
@@ -65,6 +66,7 @@ export function Shell({ locale, children }: { locale: Locale; children: React.Re
           {c.ui.skip}
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
