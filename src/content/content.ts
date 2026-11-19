@@ -141,7 +141,7 @@ const pt: Content = {
     items: [
       {
         title: "Cache com Redis",
-        body: "Coloquei uma camada de cache na plataforma da PontoGO e os custos de infraestrutura caíram bastante.",
+        body: "No projeto de cache com Redis, implementei os caches e a invalidação deles.",
       },
       {
         title: "Go concorrente",
@@ -168,7 +168,7 @@ const pt: Content = {
         period: "mai/2025 até hoje",
         current: true,
         bullets: [
-          "Implementei cache com Redis na plataforma e reduzi bastante os custos de infraestrutura.",
+          "Implementei caches com Redis e a invalidação deles, como parte do projeto de cache da plataforma.",
           "Desenvolvo e otimizo APIs em Go, usando concorrência para ganhar desempenho e baixar a latência.",
           "Faço o fullstack em React, Next.js e TailwindCSS e os apps mobile em React Native.",
           "Usei Grafana e Prometheus para acompanhar as métricas da plataforma.",
@@ -373,7 +373,7 @@ const en: Content = {
     label: "Impact",
     title: "What I've shipped to production",
     items: [
-      { title: "Redis caching", body: "I added a cache layer to PontoGO's platform and infrastructure costs dropped significantly." },
+      { title: "Redis caching", body: "On a Redis caching project, I implemented the caches and their invalidation." },
       { title: "Concurrent Go", body: "I write and tune Go APIs, using concurrency to cut latency on the busiest flows." },
       { title: "Deploys and releases", body: "I own deployments and app releases to production." },
       { title: "People", body: "I train and mentor interns and help run technical interviews." },
@@ -390,7 +390,7 @@ const en: Content = {
         period: "May 2025 to present",
         current: true,
         bullets: [
-          "Added Redis caching to the platform, which significantly reduced infrastructure costs.",
+          "Implemented Redis caches and their invalidation as part of the platform's caching project.",
           "Build and tune Go APIs, using concurrency for better throughput and lower latency.",
           "Do fullstack work in React, Next.js and TailwindCSS, plus mobile apps in React Native.",
           "Used Grafana and Prometheus to track platform metrics.",
