@@ -131,7 +131,7 @@ const pt: Content = {
     ctaSecondary: "Baixar currículo",
     facts: [
       { k: "Atualmente", v: "Fullstack @ PontoGO" },
-      { k: "Base", v: "Fortaleza, CE · remoto" },
+      { k: "Local", v: "Fortaleza, CE" },
       { k: "Idiomas", v: "PT nativo · EN avançado" },
     ],
   },
@@ -365,7 +365,7 @@ const en: Content = {
     ctaSecondary: "Download résumé",
     facts: [
       { k: "Currently", v: "Fullstack @ PontoGO" },
-      { k: "Based in", v: "Fortaleza, Brazil · remote" },
+      { k: "Location", v: "Fortaleza, Brazil" },
       { k: "Languages", v: "PT native · EN advanced" },
     ],
   },
