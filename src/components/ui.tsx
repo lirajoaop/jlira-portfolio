@@ -32,6 +32,16 @@ export function ButtonLink({ href, children, variant = "primary", external, down
   );
 }
 
+/** JP monogram: J in the accent color, P in the current text color. Same mark as the site icon. */
+export function Monogram({ className }: { className?: string }) {
+  return (
+    <svg viewBox="9 8 46 46" fill="none" strokeWidth="7.5" aria-hidden className={className ?? "size-7"}>
+      <path d="M33 13V39a9.5 9.5 0 0 1-19 0" stroke="var(--accent)" strokeLinecap="round" />
+      <path d="M33 13h7.5a9.5 9.5 0 0 1 0 19H33" stroke="currentColor" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export const Icon = {
   arrow: (p: { className?: string }) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className={p.className ?? "size-4"}><path d="M7 17 17 7M8 7h9v9" /></svg>

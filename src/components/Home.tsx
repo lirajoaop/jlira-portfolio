@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { content, site, type Locale, type Project } from "@/content/content";
 import { ThemeToggle } from "./ThemeToggle";
-import { ButtonLink, Icon, Section, Tag } from "./ui";
+import { ButtonLink, Icon, Monogram, Section, Tag } from "./ui";
 
 export function Home({ locale }: { locale: Locale }) {
   const c = content[locale];
@@ -47,8 +47,9 @@ function Header({ locale }: { locale: Locale }) {
   return (
     <header className="sticky top-0 z-40 border-b border-line/70 bg-bg/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <a href={locale === "pt" ? "/" : "/en"} className="font-mono text-sm font-semibold tracking-tight">
-          <span className="text-accent">~/</span>jplira
+        <a href={locale === "pt" ? "/" : "/en"} className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
+          <Monogram className="size-7 shrink-0" />
+          <span>{site.name}</span>
         </a>
         <nav aria-label="Principal" className="hidden md:block">
           <ul className="flex items-center gap-6 text-sm text-muted">
