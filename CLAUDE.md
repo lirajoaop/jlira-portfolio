@@ -9,7 +9,7 @@ Personal portfolio. Next.js 15 (App Router) + TypeScript + Tailwind CSS 4.
 - Metadata, JSON-LD and theme: `src/lib/shell.tsx`
 - Routes: `src/app/(pt)` serves `/` and `src/app/(en)/en` serves `/en`
 - Project images: `public/projects/`
-- Résumé: `public/curriculo-joao-pedro-lira.pdf`
+- Résumés: `public/curriculo-joao-pedro-lira.pdf` (PT) and `public/resume-joao-pedro-lira.pdf` (EN), mapped per locale in `site.cv`
 
 ## Rules
 - Don't invent metrics or experience. Use only what's in the résumé or the repositories.

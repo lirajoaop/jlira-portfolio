@@ -9,7 +9,8 @@ export const site = {
   email: "contact.dev.jplira@gmail.com",
   github: "https://github.com/lirajoaop",
   linkedin: "https://www.linkedin.com/in/jo%C3%A3o-pedro-lira/",
-  cv: "/curriculo-joao-pedro-lira.pdf",
+  // One résumé per language: PT at "/", EN at "/en".
+  cv: { pt: "/curriculo-joao-pedro-lira.pdf", en: "/resume-joao-pedro-lira.pdf" } satisfies Record<Locale, string>,
 };
 
 export type Project = {

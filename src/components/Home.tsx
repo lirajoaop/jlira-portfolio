@@ -65,7 +65,7 @@ function Header({ locale }: { locale: Locale }) {
             {c.ui.switchLang}
           </a>
           <ThemeToggle label={c.ui.toggleTheme} />
-          <a href={site.cv} download className="hidden h-9 items-center gap-1.5 rounded-lg bg-fg px-3 text-xs font-medium text-bg transition-opacity hover:opacity-85 sm:inline-flex">
+          <a href={site.cv[locale]} download className="hidden h-9 items-center gap-1.5 rounded-lg bg-fg px-3 text-xs font-medium text-bg transition-opacity hover:opacity-85 sm:inline-flex">
             <Icon.down className="size-3.5" /> {c.ui.cv}
           </a>
         </div>
@@ -89,7 +89,7 @@ function Hero({ locale }: { locale: Locale }) {
           <p className="rise rise-2 mt-6 max-w-xl text-base leading-relaxed text-muted text-pretty sm:text-lg">{h.lead}</p>
           <div className="rise rise-3 mt-8 flex flex-wrap gap-3">
             <ButtonLink href="#projetos">{h.ctaPrimary}</ButtonLink>
-            <ButtonLink href={site.cv} variant="ghost" download>
+            <ButtonLink href={site.cv[locale]} variant="ghost" download>
               <Icon.down /> {h.ctaSecondary}
             </ButtonLink>
             <div className="flex items-center gap-1 pl-1">
@@ -394,7 +394,7 @@ function Contact({ locale }: { locale: Locale }) {
             <ButtonLink href={site.github} variant="ghost" external>
               <Icon.github /> GitHub
             </ButtonLink>
-            <ButtonLink href={site.cv} variant="ghost" download>
+            <ButtonLink href={site.cv[locale]} variant="ghost" download>
               <Icon.down /> {c.ui.cv}
             </ButtonLink>
           </div>
