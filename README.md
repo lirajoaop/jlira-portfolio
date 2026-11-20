@@ -31,3 +31,7 @@ npm run typecheck  # TypeScript check (run after a build)
 ## Deployment
 
 On Vercel: import the repository and Next.js is detected automatically, with no extra configuration.
+
+## License
+
+The code is released under the [MIT License](LICENSE). Personal content is not covered: the texts about me, the résumés in `public/` and the images and project screenshots remain all rights reserved.
