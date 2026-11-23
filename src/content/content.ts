@@ -215,7 +215,7 @@ const pt: Content = {
           },
           {
             title: "IA com fallback automático",
-            body: "O provedor principal é o Gemini 2.0 Flash. Se ele falhar, o sistema passa para o Groq (Llama 3.3 70B) e o usuário não fica sem resposta.",
+            body: "O provedor principal é o Gemini Flash-Lite. Se ele falhar, o sistema passa para o Groq (Llama 3.3 70B) e o usuário não fica sem resposta.",
           },
           {
             title: "Rate limiting por escopo",
@@ -316,7 +316,8 @@ const pt: Content = {
     label: "Sobre",
     title: "Da Psicologia para a engenharia",
     paragraphs: [
-      "Me formei em Psicologia na UFC. Passei anos estudando como as pessoas pensam, decidem e se comunicam, e depois vim para o desenvolvimento, onde fiquei.",
+      "Me formei em Psicologia na UFC, com foco em Psicologia do Trabalho. Fiz parte do NUTRA, o núcleo de Psicologia do Trabalho da universidade, e estagiei em recrutamento e seleção no SINE/IDT.",
+      "A virada veio no Na Lida da Vida, um projeto de extensão da UFC sobre o sentido do trabalho e a orientação para o mercado. Enquanto ajudava estudantes a pensar no próprio caminho, fiz a mesma pergunta para mim e percebi que queria construir software. Mudei de rota e fiquei.",
       "Isso aparece no trabalho de duas formas: tento entender bem o problema e quem vai usar o sistema antes de abrir o editor, e me comunico com clareza na hora de alinhar requisitos, dar feedback ou acompanhar alguém que está começando.",
     ],
     principlesTitle: "Como eu trabalho",
@@ -432,7 +433,7 @@ const en: Content = {
           "There are two questionnaire modes. In the simple one, an AI interprets open-ended answers. The detailed one has about 76 Likert items scored by a deterministic algorithm. The output is a ranking of 8 approaches and 9 fields, radar charts, personalized explanations and a PDF export.",
         decisions: [
           { title: "Deterministic scoring in Go", body: "The detailed mode uses ipsative normalization, which measures each person's deviation from their own mean. That cancels acquiescence bias and makes results reproducible. The AI only writes the text; it doesn't produce the score." },
-          { title: "AI with automatic fallback", body: "Gemini 2.0 Flash is the primary provider. If it fails, the system switches to Groq (Llama 3.3 70B), so users still get an answer." },
+          { title: "AI with automatic fallback", body: "Gemini Flash-Lite is the primary provider. If it fails, the system switches to Groq (Llama 3.3 70B), so users still get an answer." },
           { title: "Scoped rate limiting", body: "Per-IP token bucket: 60 req/min overall, 10 on auth routes and 5 on answer submission, the most expensive route." },
           { title: "Anonymous flow with claim", body: "You can answer without an account. After signing in, you link that session to your account (JWT via cookie or Bearer, Google OAuth, bcrypt)." },
           { title: "Server-generated artifacts", body: "The PDF is generated in Go with gofpdf, and the 1080×1920 Story image with a QR code comes from next/og, for sharing results." },
@@ -511,7 +512,8 @@ const en: Content = {
     label: "About",
     title: "From Psychology to engineering",
     paragraphs: [
-      "I studied Psychology at the Federal University of Ceará. I spent years learning how people think, decide and communicate, and then I moved into software development, where I've stayed.",
+      "I studied Psychology at the Federal University of Ceará, focusing on work psychology. I was part of NUTRA, the university's work psychology group, and interned in recruitment and selection at SINE/IDT, the public employment service in Ceará.",
+      "The turn came in Na Lida da Vida, a UFC outreach project about finding meaning in work and preparing for the job market. While helping students think about their own paths, I asked myself the same question and realized I wanted to build software. I changed course and stayed.",
       "That shows up in my work in two ways: I try to understand the problem and the people who will use the system before I open the editor, and I communicate clearly when aligning requirements, giving feedback or helping someone who's just starting out.",
     ],
     principlesTitle: "How I work",
