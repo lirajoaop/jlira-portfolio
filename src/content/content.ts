@@ -46,11 +46,6 @@ export type Content = {
     ctaSecondary: string;
     facts: { k: string; v: string }[];
   };
-  impact: {
-    label: string;
-    title: string;
-    items: { title: string; body: string }[];
-  };
   experience: {
     label: string;
     title: string;
@@ -136,31 +131,9 @@ const pt: Content = {
       { k: "Idiomas", v: "PT nativo, EN avançado" },
     ],
   },
-  impact: {
-    label: "Impacto",
-    title: "O que eu já entreguei em produção",
-    items: [
-      {
-        title: "Cache com Redis",
-        body: "No projeto de cache com Redis, implementei os caches e a invalidação deles.",
-      },
-      {
-        title: "Go concorrente",
-        body: "Escrevo e otimizo APIs em Go usando concorrência para cortar latência nos fluxos mais usados.",
-      },
-      {
-        title: "Deploy e publicação",
-        body: "Sou responsável pelos deploys e pela publicação dos aplicativos em produção.",
-      },
-      {
-        title: "Pessoas",
-        body: "Treino e acompanho estagiários e ajudo nas entrevistas técnicas de recrutamento.",
-      },
-    ],
-  },
   experience: {
     label: "Experiência",
-    title: "Onde eu trabalho",
+    title: "O que eu já entreguei em produção",
     company: "PontoGO",
     location: "Fortaleza, CE",
     roles: [
@@ -371,19 +344,9 @@ const en: Content = {
       { k: "Languages", v: "PT native, EN advanced" },
     ],
   },
-  impact: {
-    label: "Impact",
-    title: "What I've shipped to production",
-    items: [
-      { title: "Redis caching", body: "On a Redis caching project, I implemented the caches and their invalidation." },
-      { title: "Concurrent Go", body: "I write and tune Go APIs, using concurrency to cut latency on the busiest flows." },
-      { title: "Deploys and releases", body: "I own deployments and app releases to production." },
-      { title: "People", body: "I train and mentor interns and help run technical interviews." },
-    ],
-  },
   experience: {
     label: "Experience",
-    title: "Where I work",
+    title: "What I've shipped to production",
     company: "PontoGO",
     location: "Fortaleza, Brazil",
     roles: [

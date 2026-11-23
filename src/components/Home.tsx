@@ -9,9 +9,6 @@ export function Home({ locale }: { locale: Locale }) {
     <>
       <Hero locale={locale} />
       <main id="main">
-        <Section id="impacto" label={c.impact.label} title={c.impact.title}>
-          <Impact locale={locale} />
-        </Section>
         <Section id="experiencia" label={c.experience.label} title={c.experience.title}>
           <Experience locale={locale} />
         </Section>
@@ -46,15 +43,16 @@ function Hero({ locale }: { locale: Locale }) {
   return (
     <header className="bg-band text-band-ink">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 py-4 md:h-16 md:flex-nowrap md:py-0">
           <a href={locale === "pt" ? "/" : "/en"} className={`text-[15px] font-bold ${bandLink}`}>
             jplira.dev
           </a>
-          <nav aria-label={locale === "pt" ? "Principal" : "Main"} className="hidden md:block">
-            <ul className="flex items-center gap-7 text-[15px]">
+          {/* Full-width second row on phones, inline between logo and actions from md up. */}
+          <nav aria-label={locale === "pt" ? "Principal" : "Main"} className="order-last w-full border-t border-band-ink/30 pt-1 md:order-none md:w-auto md:border-0 md:pt-0">
+            <ul className="flex flex-wrap items-center gap-x-4 text-[15px] md:gap-7">
               {c.nav.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} className={bandLink}>{n.label}</a>
+                  <a href={n.href} className={`inline-block py-3 md:py-0 ${bandLink}`}>{n.label}</a>
                 </li>
               ))}
             </ul>
@@ -101,21 +99,6 @@ function Hero({ locale }: { locale: Locale }) {
         </div>
       </div>
     </header>
-  );
-}
-
-/* ---------- Impact ---------- */
-function Impact({ locale }: { locale: Locale }) {
-  const i = content[locale].impact;
-  return (
-    <dl className="grid gap-x-12 gap-y-8 sm:grid-cols-2">
-      {i.items.map((it) => (
-        <div key={it.title}>
-          <dt className="text-lg font-bold">{it.title}</dt>
-          <dd className="mt-1.5 leading-relaxed text-muted">{it.body}</dd>
-        </div>
-      ))}
-    </dl>
   );
 }
 
