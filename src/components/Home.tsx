@@ -95,12 +95,15 @@ function Hero({ locale }: { locale: Locale }) {
               <a href={site.cv[locale]} download className="inline-flex items-center gap-2 rounded-md border-2 border-band-ink px-5 py-2.5 text-[15px] font-medium transition-colors hover:bg-band-ink hover:text-band focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-band-ink">
                 <Icon.down /> {h.ctaSecondary}
               </a>
-              <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid size-11 place-items-center rounded-md hover:bg-band-ink/15 focus-visible:outline-2 focus-visible:outline-band-ink">
-                <Icon.github className="size-5" />
-              </a>
-              <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid size-11 place-items-center rounded-md hover:bg-band-ink/15 focus-visible:outline-2 focus-visible:outline-band-ink">
-                <Icon.linkedin className="size-5" />
-              </a>
+              {/* one unit, so the two icons wrap together on narrow screens; -ml-3 lines the icon glyph up with the text edge */}
+              <div className="-ml-3 flex items-center gap-1">
+                <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid size-11 place-items-center rounded-md hover:bg-band-ink/15 focus-visible:outline-2 focus-visible:outline-band-ink">
+                  <Icon.github className="size-5" />
+                </a>
+                <a href={site.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid size-11 place-items-center rounded-md hover:bg-band-ink/15 focus-visible:outline-2 focus-visible:outline-band-ink">
+                  <Icon.linkedin className="size-5" />
+                </a>
+              </div>
             </div>
             <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-3 text-[15px]">
               {h.facts.map((f) => (
@@ -145,6 +148,8 @@ function Experience({ locale }: { locale: Locale }) {
 }
 
 /* ---------- Projects ---------- */
+const caseLabel = "text-sm font-bold text-accent";
+
 function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
   const l = content[locale].projects;
   return (
@@ -160,28 +165,27 @@ function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
       )}
       {p.flow && <Flow steps={p.flow} label={l.flowLabel} />}
 
-      <div className="mt-8 grid gap-8 md:grid-cols-2">
-        <dl className="space-y-5 leading-relaxed">
-          <div>
-            <dt className="font-bold">{l.problemLabel}</dt>
-            <dd className="mt-1 text-muted">{p.problem}</dd>
-          </div>
-          <div>
-            <dt className="font-bold">{l.solutionLabel}</dt>
-            <dd className="mt-1 text-muted">{p.solution}</dd>
-          </div>
-        </dl>
+      {/* Three levels: section label (small, accent), item title (bold), body (muted) */}
+      <dl className="mt-10 grid gap-8 leading-relaxed md:grid-cols-2 md:gap-10">
         <div>
-          <h4 className="font-bold">{l.decisionsLabel}</h4>
-          <ul className="mt-2 space-y-4">
-            {p.decisions.map((d) => (
-              <li key={d.title} className="leading-relaxed">
-                <span className="font-medium">{d.title}.</span> <span className="text-muted">{d.body}</span>
-              </li>
-            ))}
-          </ul>
+          <dt className={caseLabel}>{l.problemLabel}</dt>
+          <dd className="mt-2 text-muted">{p.problem}</dd>
         </div>
-      </div>
+        <div>
+          <dt className={caseLabel}>{l.solutionLabel}</dt>
+          <dd className="mt-2 text-muted">{p.solution}</dd>
+        </div>
+      </dl>
+
+      <h4 className={`mt-10 ${caseLabel}`}>{l.decisionsLabel}</h4>
+      <dl className="mt-3 border-b border-line">
+        {p.decisions.map((d) => (
+          <div key={d.title} className="grid gap-1 border-t border-line py-4 md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] md:gap-8">
+            <dt className="font-bold text-pretty">{d.title}</dt>
+            <dd className="leading-relaxed text-muted">{d.body}</dd>
+          </div>
+        ))}
+      </dl>
 
       <div className="mt-8 flex flex-wrap gap-1.5">
         {p.stack.map((s) => (
