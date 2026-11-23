@@ -37,6 +37,7 @@ export type Content = {
     toggleTheme: string;
     skip: string;
     menu: string;
+    backToTop: string;
   };
   hero: {
     eyebrow: string;
@@ -118,6 +119,7 @@ const pt: Content = {
     toggleTheme: "Alternar tema",
     skip: "Pular para o conteúdo",
     menu: "Menu",
+    backToTop: "Voltar ao topo",
   },
   hero: {
     eyebrow: "Desenvolvedor Fullstack · Go + Next.js",
@@ -332,6 +334,7 @@ const en: Content = {
     toggleTheme: "Toggle theme",
     skip: "Skip to content",
     menu: "Menu",
+    backToTop: "Back to top",
   },
   hero: {
     eyebrow: "Fullstack Developer · Go + Next.js",

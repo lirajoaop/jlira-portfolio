@@ -2,13 +2,18 @@
 
 import { useEffect, useRef } from "react";
 
-/** Collapsible section menu for phones. Works without JS (native <details>); JS only closes it on link tap, Esc or outside tap. */
-export function MobileMenu({ label, navLabel, items }: { label: string; navLabel: string; items: { label: string; href: string }[] }) {
+/**
+ * Toggle for the phone section menu. The list itself is server-rendered in the hero band
+ * (id = navId) and shown with CSS while this <details> is open, so it works without JS.
+ * JS only closes it on link tap, Esc or a tap outside the toggle and the list.
+ */
+export function MobileMenu({ label, navId }: { label: string; navId: string }) {
   const ref = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    const nav = document.getElementById(navId);
+    if (!el || !nav) return;
     const close = () => {
       el.open = false;
     };
@@ -19,19 +24,25 @@ export function MobileMenu({ label, navLabel, items }: { label: string; navLabel
       }
     };
     const onPointer = (e: PointerEvent) => {
-      if (el.open && !el.contains(e.target as Node)) close();
+      const t = e.target as Node;
+      if (el.open && !el.contains(t) && !nav.contains(t)) close();
+    };
+    const onNavClick = (e: MouseEvent) => {
+      if ((e.target as Element).closest("a")) close();
     };
     document.addEventListener("keydown", onKey);
     document.addEventListener("pointerdown", onPointer);
+    nav.addEventListener("click", onNavClick);
     return () => {
       document.removeEventListener("keydown", onKey);
       document.removeEventListener("pointerdown", onPointer);
+      nav.removeEventListener("click", onNavClick);
     };
-  }, []);
+  }, [navId]);
 
   return (
     <details ref={ref} className="group md:hidden">
-      <summary className="flex h-9 cursor-pointer list-none items-center gap-1.5 rounded-md border border-band-ink/60 px-2.5 text-sm font-medium transition-colors hover:bg-band-ink hover:text-band focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-band-ink [&::-webkit-details-marker]:hidden">
+      <summary aria-controls={navId} className="flex h-9 cursor-pointer list-none items-center gap-1.5 rounded-md border border-band-ink/60 px-2.5 text-sm font-medium transition-colors hover:bg-band-ink hover:text-band group-open:bg-band-ink group-open:text-band focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-band-ink [&::-webkit-details-marker]:hidden">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden className="size-4 group-open:hidden">
           <path d="M4 7h16M4 12h16M4 17h16" />
         </svg>
@@ -40,17 +51,6 @@ export function MobileMenu({ label, navLabel, items }: { label: string; navLabel
         </svg>
         {label}
       </summary>
-      <nav aria-label={navLabel} className="absolute top-full right-0 z-30 mt-2 w-[min(18rem,calc(100vw-2rem))] overflow-hidden rounded-md border border-line bg-surface text-fg shadow-lg">
-        <ul>
-          {items.map((n) => (
-            <li key={n.href} className="border-b border-line last:border-b-0">
-              <a href={n.href} onClick={() => ref.current && (ref.current.open = false)} className="block px-4 py-3 text-[15px] font-medium hover:bg-surface-2 focus-visible:bg-surface-2 focus-visible:outline-none">
-                {n.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </details>
   );
 }

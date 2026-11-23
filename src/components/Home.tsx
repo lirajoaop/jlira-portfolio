@@ -43,10 +43,9 @@ function Hero({ locale }: { locale: Locale }) {
   const navLabel = locale === "pt" ? "Principal" : "Main";
   const bandLink = "rounded-sm text-band-ink underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-band-ink";
   return (
-    <header className="bg-band text-band-ink">
+    <header id="top" className="group/hero bg-band text-band-ink">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* relative: anchors the mobile menu panel to the right edge of this row */}
-        <div className="relative flex h-16 items-center justify-between gap-4">
+        <div className="flex h-16 items-center justify-between gap-4">
           <a href={locale === "pt" ? "/" : "/en"} className={`text-[15px] font-bold ${bandLink}`}>
             jplira.dev
           </a>
@@ -60,13 +59,26 @@ function Hero({ locale }: { locale: Locale }) {
             </ul>
           </nav>
           <div className="flex items-center gap-2">
-            <MobileMenu label={c.ui.menu} navLabel={navLabel} items={c.nav} />
+            <MobileMenu label={c.ui.menu} navId="mobile-nav" />
             <a href={c.ui.switchLangHref} hrefLang={locale === "pt" ? "en" : "pt-BR"} className="grid h-9 place-items-center rounded-md border border-band-ink/60 px-2.5 text-sm font-medium transition-colors hover:bg-band-ink hover:text-band focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-band-ink">
               {c.ui.switchLang}
             </a>
             <ThemeToggle label={c.ui.toggleTheme} className="grid size-9 place-items-center rounded-md border border-band-ink/60 transition-colors hover:bg-band-ink hover:text-band focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-band-ink" />
           </div>
         </div>
+
+        {/* Phone menu: opens inside the band and pushes the hero down; shown while the MobileMenu <details> is open */}
+        <nav id="mobile-nav" aria-label={navLabel} className="hidden border-t border-band-ink/30 group-has-[details[open]]/hero:block md:hidden!">
+          <ul>
+            {c.nav.map((n) => (
+              <li key={n.href} className="border-b border-band-ink/30">
+                <a href={n.href} className="block py-3 text-2xl font-bold tracking-[-0.02em] focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-band-ink">
+                  {n.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="grid gap-8 pt-14 pb-20 sm:pt-20 sm:pb-28 md:grid-cols-[auto_minmax(0,1fr)] md:items-end md:gap-14">
           <Monogram className="size-28 sm:size-40 lg:size-56" j="var(--band-ink)" p="var(--band-deep)" />
@@ -324,6 +336,9 @@ function Footer({ locale }: { locale: Locale }) {
           <Monogram className="size-5" /> © {new Date().getFullYear()} {site.name}
         </p>
         <p>{c.footer}</p>
+        <a href="#top" className="self-start py-1 rounded-sm text-fg underline underline-offset-4 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          {c.ui.backToTop}
+        </a>
       </div>
     </footer>
   );
