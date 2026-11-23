@@ -341,7 +341,10 @@ function Footer({ locale }: { locale: Locale }) {
           <Monogram className="size-5" /> © {new Date().getFullYear()} {site.name}
         </p>
         <p>{c.footer}</p>
-        <a href="#top" className="self-start py-1 rounded-sm text-fg underline underline-offset-4 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+        <a href="#top" className="inline-flex items-center gap-1.5 self-start rounded-sm py-1 font-medium transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent sm:self-auto">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="size-4">
+            <path d="M12 19V5m0 0-6 6m6-6 6 6" />
+          </svg>
           {c.ui.backToTop}
         </a>
       </div>
