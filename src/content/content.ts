@@ -36,6 +36,7 @@ export type Content = {
     switchLangHref: string;
     toggleTheme: string;
     skip: string;
+    menu: string;
   };
   hero: {
     eyebrow: string;
@@ -116,6 +117,7 @@ const pt: Content = {
     switchLangHref: "/en",
     toggleTheme: "Alternar tema",
     skip: "Pular para o conteúdo",
+    menu: "Menu",
   },
   hero: {
     eyebrow: "Desenvolvedor Fullstack · Go + Next.js",
@@ -329,6 +331,7 @@ const en: Content = {
     switchLangHref: "/",
     toggleTheme: "Toggle theme",
     skip: "Skip to content",
+    menu: "Menu",
   },
   hero: {
     eyebrow: "Fullstack Developer · Go + Next.js",
