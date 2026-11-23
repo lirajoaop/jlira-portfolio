@@ -2,7 +2,7 @@ import Image from "next/image";
 import { content, site, type Locale, type Project } from "@/content/content";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
-import { ButtonLink, Icon, Monogram, Section, Tag } from "./ui";
+import { blockLabel, ButtonLink, Icon, Monogram, Section, Tag } from "./ui";
 
 export function Home({ locale }: { locale: Locale }) {
   const c = content[locale];
@@ -148,14 +148,12 @@ function Experience({ locale }: { locale: Locale }) {
 }
 
 /* ---------- Projects ---------- */
-const caseLabel = "text-sm font-bold text-accent";
-
 function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
   const l = content[locale].projects;
   return (
     <article id={p.slug} aria-labelledby={`${p.slug}-name`}>
       <p className="font-medium text-accent">{p.kicker}</p>
-      <h3 id={`${p.slug}-name`} className="mt-1 text-3xl font-black tracking-tight sm:text-4xl">{p.name}</h3>
+      <h3 id={`${p.slug}-name`} className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{p.name}</h3>
       <p className="mt-4 max-w-[68ch] text-lg leading-relaxed text-pretty">{p.tagline}</p>
 
       {p.images && (
@@ -168,16 +166,16 @@ function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
       {/* Three levels: section label (small, accent), item title (bold), body (muted) */}
       <dl className="mt-10 grid gap-8 leading-relaxed md:grid-cols-2 md:gap-10">
         <div>
-          <dt className={caseLabel}>{l.problemLabel}</dt>
+          <dt className={blockLabel}>{l.problemLabel}</dt>
           <dd className="mt-2 text-muted">{p.problem}</dd>
         </div>
         <div>
-          <dt className={caseLabel}>{l.solutionLabel}</dt>
+          <dt className={blockLabel}>{l.solutionLabel}</dt>
           <dd className="mt-2 text-muted">{p.solution}</dd>
         </div>
       </dl>
 
-      <h4 className={`mt-10 ${caseLabel}`}>{l.decisionsLabel}</h4>
+      <h4 className={`mt-10 ${blockLabel}`}>{l.decisionsLabel}</h4>
       <dl className="mt-3 border-b border-line">
         {p.decisions.map((d) => (
           <div key={d.title} className="grid gap-1 border-t border-line py-4 md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] md:gap-8">
@@ -225,11 +223,17 @@ function Flow({ steps, label }: { steps: string[]; label: string }) {
 function StackGrid({ locale }: { locale: Locale }) {
   const s = content[locale].stack;
   return (
-    <dl className="grid gap-x-12 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+    <dl className="border-b border-line">
       {s.groups.map((g) => (
-        <div key={g.name}>
+        <div key={g.name} className="grid gap-3 border-t border-line py-5 md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] md:gap-8">
           <dt className="font-bold">{g.name}</dt>
-          <dd className="mt-2 leading-relaxed text-muted">{g.items.join(", ")}</dd>
+          <dd>
+            <ul className="flex flex-wrap gap-2">
+              {g.items.map((it) => (
+                <li key={it} className="rounded-md border border-line bg-surface px-2.5 py-1 text-[15px] font-medium">{it}</li>
+              ))}
+            </ul>
+          </dd>
         </div>
       ))}
     </dl>
@@ -279,23 +283,21 @@ function Learning({ locale }: { locale: Locale }) {
 function About({ locale }: { locale: Locale }) {
   const a = content[locale].about;
   return (
-    <div className="grid gap-12 xl:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-      <div className="max-w-[68ch] space-y-4 text-lg leading-relaxed text-pretty">
+    <div>
+      <div className="max-w-[68ch] space-y-5 text-lg leading-relaxed text-pretty">
         {a.paragraphs.map((p, i) => (
-          <p key={i} className={i === 0 ? "" : "text-muted"}>{p}</p>
+          <p key={i}>{p}</p>
         ))}
       </div>
-      <div>
-        <h3 className="font-bold">{a.principlesTitle}</h3>
-        <ul className="mt-4 space-y-5">
-          {a.principles.map((p) => (
-            <li key={p.title}>
-              <p className="font-medium">{p.title}</p>
-              <p className="mt-1 leading-relaxed text-muted">{p.body}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <h3 className={`mt-14 ${blockLabel}`}>{a.principlesTitle}</h3>
+      <ul className="mt-3 grid gap-x-10 gap-y-6 border-t border-line pt-6 md:grid-cols-3">
+        {a.principles.map((p) => (
+          <li key={p.title}>
+            <p className="font-bold">{p.title}</p>
+            <p className="mt-1 leading-relaxed text-muted">{p.body}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -306,11 +308,10 @@ function Contact({ locale }: { locale: Locale }) {
   const k = c.contact;
   return (
     <section id="contato" aria-labelledby="contato-title" className="mx-auto max-w-6xl border-t border-line px-4 py-16 sm:px-6 sm:py-24">
-      <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14">
-        <h2 id="contato-title" className="text-2xl font-bold tracking-tight sm:text-[1.75rem]">{k.label}</h2>
+      <div>
         <div>
-          <p className="text-3xl font-black tracking-tight text-balance sm:text-4xl">{k.title}</p>
-          <p className="mt-4 max-w-[60ch] text-lg leading-relaxed text-muted text-pretty">{k.body}</p>
+          <h2 id="contato-title" className="text-4xl font-black tracking-[-0.03em] text-balance sm:text-5xl">{k.title}</h2>
+          <p className="mt-3 max-w-[60ch] text-lg leading-relaxed text-muted text-pretty">{k.body}</p>
           <a href={`mailto:${site.email}`} className="mt-8 inline-block text-xl font-bold break-all text-accent underline decoration-2 underline-offset-[6px] hover:decoration-4 sm:text-2xl">
             {site.email}
           </a>

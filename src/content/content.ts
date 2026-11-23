@@ -295,7 +295,6 @@ const pt: Content = {
     paragraphs: [
       "Me formei em Psicologia na UFC, com foco em Psicologia do Trabalho. Fiz parte do NUTRA, o núcleo de Psicologia do Trabalho da universidade, e estagiei em recrutamento e seleção no SINE/IDT.",
       "A virada veio no Na Lida da Vida, um projeto de extensão da UFC sobre o sentido do trabalho e a orientação para o mercado. Enquanto ajudava estudantes a pensar no próprio caminho, fiz a mesma pergunta para mim e percebi que queria construir software. Mudei de rota e fiquei.",
-      "Isso aparece no trabalho de duas formas: tento entender bem o problema e quem vai usar o sistema antes de abrir o editor, e me comunico com clareza na hora de alinhar requisitos, dar feedback ou acompanhar alguém que está começando.",
     ],
     principlesTitle: "Como eu trabalho",
     principles: [
@@ -483,7 +482,6 @@ const en: Content = {
     paragraphs: [
       "I studied Psychology at the Federal University of Ceará, focusing on work psychology. I was part of NUTRA, the university's work psychology group, and interned in recruitment and selection at SINE/IDT, the public employment service in Ceará.",
       "The turn came in Na Lida da Vida, a UFC outreach project about finding meaning in work and preparing for the job market. While helping students think about their own paths, I asked myself the same question and realized I wanted to build software. I changed course and stayed.",
-      "That shows up in my work in two ways: I try to understand the problem and the people who will use the system before I open the editor, and I communicate clearly when aligning requirements, giving feedback or helping someone who's just starting out.",
     ],
     principlesTitle: "How I work",
     principles: [
