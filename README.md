@@ -6,7 +6,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png">
-  <img src="docs/screenshot-light.png" alt="Home page of jplira.dev: hero with the JP monogram, headline and a Go code card">
+  <img src="docs/screenshot-light.png" alt="Home page of jplira.dev: Go-blue hero band with the JP monogram and the name">
 </picture>
 
 Personal website built with **Next.js 15 (App Router) + TypeScript + Tailwind CSS 4**. It's bilingual (PT at `/`, EN at `/en`), has light and dark themes, and every page is statically generated.
