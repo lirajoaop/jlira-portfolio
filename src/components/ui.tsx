@@ -1,30 +1,31 @@
 import type { ReactNode } from "react";
 
-export function Section({ id, label, index, title, children, lead }: { id: string; label: string; index: string; title: string; lead?: string; children: ReactNode }) {
+/** Page section: heading in a left column on wide screens, content on the right. */
+export function Section({ id, label, title, children, lead }: { id: string; label: string; title: string; lead?: string; children: ReactNode }) {
   return (
-    <section id={id} className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-      <header className="mb-10 sm:mb-14">
-        <p className="font-mono text-xs tracking-wider text-accent uppercase">
-          <span className="text-muted">{index} /</span> {label}
-        </p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight text-balance sm:text-4xl">{title}</h2>
-        {lead && <p className="mt-4 max-w-2xl text-muted text-pretty">{lead}</p>}
-      </header>
-      {children}
+    <section id={id} aria-labelledby={`${id}-title`} className="mx-auto max-w-6xl border-t border-line px-4 first:border-t-0 py-16 sm:px-6 sm:py-24">
+      <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14">
+        <header>
+          <h2 id={`${id}-title`} className="text-2xl font-bold tracking-tight sm:text-[1.75rem]">{label}</h2>
+          <p className="mt-2 text-muted text-pretty">{title}</p>
+          {lead && <p className="mt-4 text-sm leading-relaxed text-muted text-pretty">{lead}</p>}
+        </header>
+        <div className="min-w-0">{children}</div>
+      </div>
     </section>
   );
 }
 
 export function Tag({ children }: { children: ReactNode }) {
-  return <span className="inline-flex items-center rounded-md border border-line bg-surface-2 px-2 py-0.5 font-mono text-xs text-muted">{children}</span>;
+  return <span className="inline-flex items-center rounded-md bg-surface-2 px-2 py-0.5 text-sm text-fg">{children}</span>;
 }
 
 export function ButtonLink({ href, children, variant = "primary", external, download }: { href: string; children: ReactNode; variant?: "primary" | "ghost"; external?: boolean; download?: boolean }) {
-  const base = "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
+  const base = "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
   const styles =
     variant === "primary"
-      ? "bg-accent text-white hover:brightness-110 [[data-theme=dark]_&]:text-[#04141a]"
-      : "border border-line bg-surface text-fg hover:border-accent hover:text-accent";
+      ? "bg-accent text-white hover:brightness-110 [[data-theme=dark]_&]:text-[#04212b]"
+      : "border border-line text-fg hover:border-accent hover:text-accent";
   return (
     <a href={href} className={`${base} ${styles}`} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} {...(download ? { download: "" } : {})}>
       {children}
@@ -32,12 +33,12 @@ export function ButtonLink({ href, children, variant = "primary", external, down
   );
 }
 
-/** JP monogram: J in the accent color, P in the current text color. Same mark as the site icon. */
-export function Monogram({ className }: { className?: string }) {
+/** JP monogram: J in `j` (default accent), P in `p` (default current text color). Same mark as the site icon. */
+export function Monogram({ className, j = "var(--accent)", p = "currentColor" }: { className?: string; j?: string; p?: string }) {
   return (
     <svg viewBox="9 8 46 46" fill="none" strokeWidth="7.5" aria-hidden className={className ?? "size-7"}>
-      <path d="M33 13V39a9.5 9.5 0 0 1-19 0" stroke="var(--accent)" strokeLinecap="round" />
-      <path d="M33 13h7.5a9.5 9.5 0 0 1 0 19H33" stroke="currentColor" strokeLinejoin="round" />
+      <path d="M33 13V39a9.5 9.5 0 0 1-19 0" stroke={j} strokeLinecap="round" />
+      <path d="M33 13h7.5a9.5 9.5 0 0 1 0 19H33" stroke={p} strokeLinejoin="round" />
     </svg>
   );
 }

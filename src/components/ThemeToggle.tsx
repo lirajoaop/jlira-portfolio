@@ -1,6 +1,6 @@
 "use client";
 
-export function ThemeToggle({ label }: { label: string }) {
+export function ThemeToggle({ label, className }: { label: string; className?: string }) {
   function toggle() {
     const el = document.documentElement;
     const next = el.dataset.theme === "dark" ? "light" : "dark";
@@ -10,7 +10,7 @@ export function ThemeToggle({ label }: { label: string }) {
     } catch {}
   }
   return (
-    <button type="button" onClick={toggle} aria-label={label} title={label} className="grid size-9 place-items-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-accent">
+    <button type="button" onClick={toggle} aria-label={label} title={label} className={className ?? "grid size-9 place-items-center rounded-lg border border-line text-muted transition-colors hover:border-accent hover:text-accent"}>
       {/* sol no dark, lua no light: controlado só por CSS para não depender de hidratação */}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden className="hidden size-4 [[data-theme=dark]_&]:block">
         <circle cx="12" cy="12" r="4" />

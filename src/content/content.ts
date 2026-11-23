@@ -133,7 +133,7 @@ const pt: Content = {
     facts: [
       { k: "Atualmente", v: "Fullstack @ PontoGO" },
       { k: "Local", v: "Fortaleza, CE" },
-      { k: "Idiomas", v: "PT nativo · EN avançado" },
+      { k: "Idiomas", v: "PT nativo, EN avançado" },
     ],
   },
   impact: {
@@ -293,9 +293,9 @@ const pt: Content = {
     label: "Formação",
     title: "Continuo estudando",
     featured: {
-      badge: "Em conclusão · 2026",
+      badge: "Em conclusão em 2026",
       name: "Engenharia de Software com IA",
-      org: "Geração Tech 4.0 · FullCycle · 96h",
+      org: "Geração Tech 4.0, FullCycle, 96h",
       body: "Um programa de engenharia de software com IA aplicada ao ciclo inteiro de desenvolvimento, do ambiente ao system design.",
       modules: [
         { n: "01", title: "Engenharia de Software e IA aplicada", body: "Ambiente com Docker, revisão de POO, SOLID e Clean Architecture, e IA para refatoração, code review e geração de código." },
@@ -307,7 +307,7 @@ const pt: Content = {
     items: [
       { title: "Análise e Desenvolvimento de Sistemas", org: "UNIGRANDE", period: "2025 a 2027", note: "Em andamento" },
       { title: "Bacharelado em Psicologia", org: "Universidade Federal do Ceará (UFC)", period: "2020 a 2025" },
-      { title: "Geração Tech 3.0: IA e Soft Skills para Programadores", org: "Top 50 · Medalha de Prata", period: "Certificação" },
+      { title: "Geração Tech 3.0: IA e Soft Skills para Programadores", org: "Top 50, Medalha de Prata", period: "Certificação" },
       { title: "Introdução ao Go", org: "Certificação", period: "Certificação" },
       { title: "Geração Tech 2.0", org: "Certificação", period: "Certificação" },
     ],
@@ -367,7 +367,7 @@ const en: Content = {
     facts: [
       { k: "Currently", v: "Fullstack @ PontoGO" },
       { k: "Location", v: "Fortaleza, Brazil" },
-      { k: "Languages", v: "PT native · EN advanced" },
+      { k: "Languages", v: "PT native, EN advanced" },
     ],
   },
   impact: {
@@ -488,9 +488,9 @@ const en: Content = {
     label: "Education",
     title: "Still learning",
     featured: {
-      badge: "Finishing · 2026",
+      badge: "Finishing in 2026",
       name: "Software Engineering with AI",
-      org: "Geração Tech 4.0 · FullCycle · 96h",
+      org: "Geração Tech 4.0, FullCycle, 96h",
       body: "A software engineering program that applies AI across the whole development cycle, from environment setup to system design.",
       modules: [
         { n: "01", title: "Software engineering & applied AI", body: "Docker environments, a review of OOP, SOLID and Clean Architecture, and AI for refactoring, code review and code generation." },
@@ -502,7 +502,7 @@ const en: Content = {
     items: [
       { title: "Systems Analysis and Development (associate degree)", org: "UNIGRANDE", period: "2025 to 2027", note: "In progress" },
       { title: "B.Sc. in Psychology", org: "Federal University of Ceará (UFC)", period: "2020 to 2025" },
-      { title: "Geração Tech 3.0: AI & Soft Skills for Developers", org: "Top 50 · Silver Medal", period: "Certification" },
+      { title: "Geração Tech 3.0: AI & Soft Skills for Developers", org: "Top 50, Silver Medal", period: "Certification" },
       { title: "Introduction to Go", org: "Certification", period: "Certification" },
       { title: "Geração Tech 2.0", org: "Certification", period: "Certification" },
     ],

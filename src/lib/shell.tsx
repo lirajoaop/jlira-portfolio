@@ -1,16 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Schibsted_Grotesk } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { content, site, type Locale } from "@/content/content";
 import "@/app/globals.css";
 
-const sans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
-const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+const sans = Schibsted_Grotesk({ subsets: ["latin"], weight: ["400", "500", "700", "900"], variable: "--font-schibsted" });
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafaf9" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0d11" },
+    { media: "(prefers-color-scheme: light)", color: "#007d9c" },
+    { media: "(prefers-color-scheme: dark)", color: "#00546b" },
   ],
 };
 
@@ -56,7 +55,7 @@ export function Shell({ locale, children }: { locale: Locale; children: React.Re
     email: `mailto:${site.email}`,
   };
   return (
-    <html lang={locale === "pt" ? "pt-BR" : "en"} data-theme="dark" suppressHydrationWarning className={`${sans.variable} ${mono.variable}`}>
+    <html lang={locale === "pt" ? "pt-BR" : "en"} data-theme="dark" suppressHydrationWarning className={sans.variable}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
