@@ -1,20 +1,21 @@
 import type { ReactNode } from "react";
 
-/** Page section: heading in a left column on wide screens, content on the right. */
+/** Page section: one heading block on top (title, muted subtitle, optional lead), content below at full width. */
 export function Section({ id, label, title, children, lead }: { id: string; label: string; title: string; lead?: string; children: ReactNode }) {
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="mx-auto max-w-6xl border-t border-line px-4 first:border-t-0 py-16 sm:px-6 sm:py-24">
-      <div className="grid gap-8 lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-14">
-        <header>
-          <h2 id={`${id}-title`} className="text-2xl font-bold tracking-tight sm:text-[1.75rem]">{label}</h2>
-          <p className="mt-2 text-muted text-pretty">{title}</p>
-          {lead && <p className="mt-4 text-sm leading-relaxed text-muted text-pretty">{lead}</p>}
-        </header>
-        <div className="min-w-0">{children}</div>
-      </div>
+      <header className="max-w-[68ch]">
+        <h2 id={`${id}-title`} className="text-4xl font-black tracking-[-0.03em] text-balance sm:text-5xl">{label}</h2>
+        <p className="mt-3 text-lg text-muted text-pretty">{title}</p>
+        {lead && <p className="mt-2 leading-relaxed text-muted text-pretty">{lead}</p>}
+      </header>
+      <div className="mt-10 min-w-0 sm:mt-12">{children}</div>
     </section>
   );
 }
+
+/** Small accent label that names a block inside a section (e.g. "Problem", "Technical decisions"). */
+export const blockLabel = "text-sm font-bold text-accent";
 
 export function Tag({ children }: { children: ReactNode }) {
   return <span className="inline-flex items-center rounded-md bg-surface-2 px-2 py-0.5 text-sm text-fg">{children}</span>;
