@@ -1,7 +1,8 @@
-import Image from "next/image";
 import { content, site, type Locale, type Project } from "@/content/content";
 import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
+import { FlowExplorer } from "./FlowExplorer";
+import { ProjectGallery } from "./ProjectGallery";
 import { blockLabel, ButtonLink, Icon, Monogram, Section, Tag } from "./ui";
 
 export function Home({ locale }: { locale: Locale }) {
@@ -81,7 +82,7 @@ function Hero({ locale }: { locale: Locale }) {
         </nav>
 
         <div className="grid gap-8 pt-14 pb-20 sm:pt-20 sm:pb-28 md:grid-cols-[auto_minmax(0,1fr)] md:items-end md:gap-14">
-          <Monogram className="size-28 sm:size-40 lg:size-56" j="var(--band-ink)" p="var(--band-deep)" />
+          <Monogram draw className="size-28 sm:size-40 lg:size-56" j="var(--band-ink)" p="var(--band-deep)" />
           <div>
             <h1 className="text-[3.25rem] leading-[0.95] font-black tracking-[-0.035em] text-balance sm:text-7xl lg:text-[6.5rem]">{site.name}</h1>
             <p className="mt-6 max-w-2xl text-xl leading-snug font-medium text-pretty sm:text-2xl">
@@ -156,12 +157,8 @@ function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
       <h3 id={`${p.slug}-name`} className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{p.name}</h3>
       <p className="mt-4 max-w-[68ch] text-lg leading-relaxed text-pretty">{p.tagline}</p>
 
-      {p.images && (
-        <div className="mt-8">
-          <Image src={p.images[0].src} alt={p.images[0].alt} width={1920} height={985} sizes="(min-width: 1152px) 850px, 100vw" className="rounded-md border border-line" />
-        </div>
-      )}
-      {p.flow && <Flow steps={p.flow} label={l.flowLabel} />}
+      {p.images && <ProjectGallery shots={p.images} label={l.galleryLabel} />}
+      {p.flow && <FlowExplorer steps={p.flow} label={l.flowLabel} hint={l.flowHint} />}
 
       {/* Three levels: section label (small, accent), item title (bold), body (muted) */}
       <dl className="mt-10 grid gap-8 leading-relaxed md:grid-cols-2 md:gap-10">
@@ -199,23 +196,6 @@ function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
         ))}
       </div>
     </article>
-  );
-}
-
-/** A request's path through the system: a real sequence, so it keeps its order marks. */
-function Flow({ steps, label }: { steps: string[]; label: string }) {
-  return (
-    <figure className="mt-8 rounded-md bg-surface-2 p-5">
-      <figcaption className="font-bold">{label}</figcaption>
-      <ol className="mt-4 flex flex-wrap items-center gap-y-2 text-sm">
-        {steps.map((s, i) => (
-          <li key={s} className="flex items-center">
-            <span className={`rounded px-2 py-1 ${i === 0 || i === steps.length - 1 ? "text-muted" : "bg-surface font-medium text-fg"}`}>{s}</span>
-            {i < steps.length - 1 && <span className="px-1.5 text-accent" aria-hidden>›</span>}
-          </li>
-        ))}
-      </ol>
-    </figure>
   );
 }
 

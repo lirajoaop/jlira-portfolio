@@ -63,6 +63,21 @@ body {
   color: #fff;
 }
 
+/* Hero monogram: the J is written top to bottom, then the P, once on load. */
+.monogram-draw path {
+  stroke-dasharray: 1 2;
+  stroke-dashoffset: 1;
+  animation: monogram-draw 0.7s cubic-bezier(0.65, 0, 0.35, 1) 0.15s forwards;
+}
+.monogram-draw path + path {
+  animation-duration: 0.6s;
+  animation-delay: 0.7s;
+}
+@keyframes monogram-draw {
+  to { stroke-dashoffset: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .monogram-draw path { animation: none; stroke-dashoffset: 0; }
 }
