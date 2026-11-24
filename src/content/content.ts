@@ -218,7 +218,7 @@ const pt: Content = {
         ],
         images: [
           { src: "/projects/result.png", label: "Resultado", alt: "Tela de resultado do PsiEncontra com gráficos radar de abordagens teóricas e campos de atuação" },
-          { src: "/projects/questionnaire.png", label: "Questionário", alt: "Pergunta 1 de 15 do questionário do PsiEncontra, com oito opções de resposta e barra de progresso" },
+          { src: "/projects/questionnaire.png", label: "Questionário", alt: "Pergunta 15 de 76 do modo detalhado do PsiEncontra, com escala de 1 (Discordo totalmente) a 5 (Concordo totalmente)" },
           { src: "/projects/landing.png", label: "Página inicial", alt: "Página inicial do PsiEncontra" },
         ],
       },
@@ -427,7 +427,7 @@ const en: Content = {
         ],
         images: [
           { src: "/projects/result.png", label: "Results", alt: "PsiEncontra results screen with radar charts for theoretical approaches and fields of practice" },
-          { src: "/projects/questionnaire.png", label: "Questionnaire", alt: "Question 1 of 15 in the PsiEncontra questionnaire, with eight answer options and a progress bar" },
+          { src: "/projects/questionnaire.png", label: "Questionnaire", alt: "Question 15 of 76 in the PsiEncontra detailed mode, with a 1 (strongly disagree) to 5 (strongly agree) scale" },
           { src: "/projects/landing.png", label: "Landing page", alt: "PsiEncontra landing page" },
         ],
       },
