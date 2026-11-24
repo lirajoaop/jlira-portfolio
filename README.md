@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/lirajoaop/jlira-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/lirajoaop/jlira-portfolio/actions/workflows/ci.yml)
 
-**Live:** [jplira.dev](https://jplira.dev)
+**Live:** [jplira.dev](https://jplira.dev/?utm_source=github)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png">
