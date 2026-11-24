@@ -23,8 +23,8 @@ export type Project = {
   decisions: { title: string; body: string }[];
   stack: string[];
   links: { label: string; href: string; primary?: boolean }[];
-  images?: { src: string; alt: string }[];
-  flow?: string[];
+  images?: { src: string; alt: string; label: string }[];
+  flow?: { step: string; detail: string }[];
 };
 
 export type Content = {
@@ -63,6 +63,8 @@ export type Content = {
     solutionLabel: string;
     decisionsLabel: string;
     flowLabel: string;
+    flowHint: string;
+    galleryLabel: string;
     items: Project[];
   };
   stack: {
@@ -174,6 +176,8 @@ const pt: Content = {
     solutionLabel: "Solução",
     decisionsLabel: "Decisões técnicas",
     flowLabel: "Fluxo de uma requisição",
+    flowHint: "Toque numa etapa para ver o que ela faz.",
+    galleryLabel: "Telas do PsiEncontra",
     items: [
       {
         slug: "psiencontra",
@@ -213,8 +217,9 @@ const pt: Content = {
           { label: "Código", href: "https://github.com/lirajoaop/psiencontra" },
         ],
         images: [
-          { src: "/projects/result.png", alt: "Tela de resultado do PsiEncontra com gráficos radar de abordagens teóricas e campos de atuação" },
-          { src: "/projects/landing.png", alt: "Página inicial do PsiEncontra" },
+          { src: "/projects/result.png", label: "Resultado", alt: "Tela de resultado do PsiEncontra com gráficos radar de abordagens teóricas e campos de atuação" },
+          { src: "/projects/questionnaire.png", label: "Questionário", alt: "Pergunta 1 de 15 do questionário do PsiEncontra, com oito opções de resposta e barra de progresso" },
+          { src: "/projects/landing.png", label: "Página inicial", alt: "Página inicial do PsiEncontra" },
         ],
       },
       {
@@ -245,7 +250,14 @@ const pt: Content = {
             body: "O Dockerfile multi-stage compila o binário Go numa etapa e entrega uma imagem final pequena.",
           },
         ],
-        flow: ["Client", "Router", "Handler", "Service", "Repository", "PostgreSQL"],
+        flow: [
+          { step: "Client", detail: "O frontend em Next.js chama a API REST com fetch." },
+          { step: "Router", detail: "O Gin direciona a rota /api/v1/openings e aplica o middleware de CORS." },
+          { step: "Handler", detail: "A camada HTTP recebe a requisição, valida a entrada e devolve a resposta em JSON." },
+          { step: "Service", detail: "As regras de negócio ficam aqui, sem saber nada de HTTP nem de banco." },
+          { step: "Repository", detail: "O acesso a dados: as consultas com GORM ficam isoladas nesta camada." },
+          { step: "PostgreSQL", detail: "O banco gerenciado no Neon, separado da API no Render." },
+        ],
         stack: ["Go", "Gin", "GORM", "PostgreSQL", "Swagger", "Docker", "Next.js 16", "React 19", "Tailwind 4", "Vercel", "Render", "Neon"],
         links: [
           { label: "Ver ao vivo", href: "https://gopportunities-front-end.vercel.app", primary: true },
@@ -388,6 +400,8 @@ const en: Content = {
     solutionLabel: "Solution",
     decisionsLabel: "Technical decisions",
     flowLabel: "How a request flows",
+    flowHint: "Tap a step to see what it does.",
+    galleryLabel: "PsiEncontra screens",
     items: [
       {
         slug: "psiencontra",
@@ -412,8 +426,9 @@ const en: Content = {
           { label: "Code", href: "https://github.com/lirajoaop/psiencontra" },
         ],
         images: [
-          { src: "/projects/result.png", alt: "PsiEncontra results screen with radar charts for theoretical approaches and fields of practice" },
-          { src: "/projects/landing.png", alt: "PsiEncontra landing page" },
+          { src: "/projects/result.png", label: "Results", alt: "PsiEncontra results screen with radar charts for theoretical approaches and fields of practice" },
+          { src: "/projects/questionnaire.png", label: "Questionnaire", alt: "Question 1 of 15 in the PsiEncontra questionnaire, with eight answer options and a progress bar" },
+          { src: "/projects/landing.png", label: "Landing page", alt: "PsiEncontra landing page" },
         ],
       },
       {
@@ -432,7 +447,14 @@ const en: Content = {
           { title: "Decoupled deploys", body: "Frontend on Vercel, API on Render and managed PostgreSQL on Neon. Each part scales and ships without depending on the others." },
           { title: "Lean image", body: "The multi-stage Dockerfile compiles the Go binary in one stage and ships a small final image." },
         ],
-        flow: ["Client", "Router", "Handler", "Service", "Repository", "PostgreSQL"],
+        flow: [
+          { step: "Client", detail: "The Next.js frontend calls the REST API with fetch." },
+          { step: "Router", detail: "Gin routes /api/v1/openings and applies the CORS middleware." },
+          { step: "Handler", detail: "The HTTP layer takes the request, validates the input and returns JSON." },
+          { step: "Service", detail: "Business rules live here, unaware of HTTP or the database." },
+          { step: "Repository", detail: "Data access: the GORM queries are kept in this layer." },
+          { step: "PostgreSQL", detail: "The managed database on Neon, separate from the API on Render." },
+        ],
         stack: ["Go", "Gin", "GORM", "PostgreSQL", "Swagger", "Docker", "Next.js 16", "React 19", "Tailwind 4", "Vercel", "Render", "Neon"],
         links: [
           { label: "Live demo", href: "https://gopportunities-front-end.vercel.app", primary: true },

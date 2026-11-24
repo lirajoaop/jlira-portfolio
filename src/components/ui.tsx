@@ -35,11 +35,12 @@ export function ButtonLink({ href, children, variant = "primary", external, down
 }
 
 /** JP monogram: J in `j` (default accent), P in `p` (default current text color). Same mark as the site icon. */
-export function Monogram({ className, j = "var(--accent)", p = "currentColor" }: { className?: string; j?: string; p?: string }) {
+/** `draw` writes the J and then the P once on load, like a signature (see `.monogram-draw` in globals.css). */
+export function Monogram({ className, j = "var(--accent)", p = "currentColor", draw = false }: { className?: string; j?: string; p?: string; draw?: boolean }) {
   return (
-    <svg viewBox="9 8 46 46" fill="none" strokeWidth="7.5" aria-hidden className={className ?? "size-7"}>
-      <path d="M33 13V39a9.5 9.5 0 0 1-19 0" stroke={j} strokeLinecap="round" />
-      <path d="M33 13h7.5a9.5 9.5 0 0 1 0 19H33" stroke={p} strokeLinejoin="round" />
+    <svg viewBox="9 8 46 46" fill="none" strokeWidth="7.5" aria-hidden className={`${className ?? "size-7"}${draw ? " monogram-draw" : ""}`}>
+      <path d="M33 13V39a9.5 9.5 0 0 1-19 0" stroke={j} strokeLinecap="round" pathLength={1} />
+      <path d="M33 13h7.5a9.5 9.5 0 0 1 0 19H33" stroke={p} strokeLinejoin="round" pathLength={1} />
     </svg>
   );
 }
