@@ -360,18 +360,20 @@ const pt: Content = {
             ],
           },
           {
+            name: "TypeScript",
+            icon: "typescript",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Telas do produto em React e Next.js." },
+              { where: "Este portfólio", what: "Todo o código do site." },
+            ],
+          },
+          {
             name: "JavaScript",
             icon: "javascript",
             used: [
               { where: "PsiEncontra", what: "Frontend." },
               { where: "Go Opportunities", what: "Frontend." },
-            ],
-          },
-          {
-            name: "TypeScript",
-            icon: "typescript",
-            used: [
-              { where: "Este portfólio", what: "Todo o código do site." },
             ],
           },
           {
@@ -419,8 +421,6 @@ const pt: Content = {
               { where: "PontoGO", what: "Modelagem e integração de dados." },
             ],
           },
-          { name: "MongoDB", icon: "mongodb" },
-          { name: "SQLite", icon: "sqlite" },
         ],
       },
       {
@@ -783,18 +783,20 @@ const en: Content = {
             ],
           },
           {
+            name: "TypeScript",
+            icon: "typescript",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Product screens in React and Next.js." },
+              { where: "This portfolio", what: "All of the site's code." },
+            ],
+          },
+          {
             name: "JavaScript",
             icon: "javascript",
             used: [
               { where: "PsiEncontra", what: "Frontend." },
               { where: "Go Opportunities", what: "Frontend." },
-            ],
-          },
-          {
-            name: "TypeScript",
-            icon: "typescript",
-            used: [
-              { where: "This portfolio", what: "All of the site's code." },
             ],
           },
           {
@@ -842,8 +844,6 @@ const en: Content = {
               { where: "PontoGO", what: "Data modeling and integration." },
             ],
           },
-          { name: "MongoDB", icon: "mongodb" },
-          { name: "SQLite", icon: "sqlite" },
         ],
       },
       {
