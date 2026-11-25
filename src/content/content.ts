@@ -1,6 +1,8 @@
 // Todo o conteúdo do site vive aqui. Para atualizar o portfólio, edite este arquivo.
 // All site copy lives here. To update the portfolio, edit this file only.
 
+import type { StackIcon } from "@/components/stackIcons";
+
 export type Locale = "pt" | "en";
 
 export const site = {
@@ -11,6 +13,14 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/jo%C3%A3o-pedro-lira/",
   // One résumé per language: PT at "/", EN at "/en".
   cv: { pt: "/curriculo-joao-pedro-lira.pdf", en: "/resume-joao-pedro-lira.pdf" } satisfies Record<Locale, string>,
+};
+
+/** `core` marks the main stack; `used` lists where it was used (only facts already on the site). */
+export type StackItem = {
+  name: string;
+  icon?: StackIcon;
+  core?: boolean;
+  used?: { where: string; what: string }[];
 };
 
 export type Project = {
@@ -70,7 +80,9 @@ export type Content = {
   stack: {
     label: string;
     title: string;
-    groups: { name: string; items: string[] }[];
+    hint: string;
+    coreLabel: string;
+    groups: { name: string; items: StackItem[] }[];
   };
   learning: {
     label: string;
@@ -275,12 +287,217 @@ const pt: Content = {
   stack: {
     label: "Stack",
     title: "Ferramentas que uso no dia a dia",
+    hint: "Passe o mouse ou toque numa tecnologia para ver onde eu usei.",
+    coreLabel: "Principal",
     groups: [
-      { name: "Backend", items: ["Go (Golang)", "Gin", "GORM", "APIs REST", "Concorrência", "Swagger"] },
-      { name: "Frontend", items: ["React", "Next.js", "React Native", "JavaScript", "TailwindCSS", "Recharts"] },
-      { name: "Dados", items: ["PostgreSQL", "Redis", "MongoDB", "Firestore", "SQLite"] },
-      { name: "Infra & Observabilidade", items: ["Docker", "Grafana", "Prometheus", "Vercel", "Render", "Railway", "Neon"] },
-      { name: "IA", items: ["Integração com LLMs", "Gemini", "Groq / Llama", "Fallback entre provedores"] },
+      {
+        name: "Backend",
+        items: [
+          {
+            name: "Go",
+            icon: "go",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "APIs com concorrência para ganhar desempenho e baixar a latência." },
+              { where: "PsiEncontra", what: "API e pontuação determinística do modo detalhado, além do PDF gerado com gofpdf." },
+              { where: "Go Opportunities", what: "API REST em camadas Handler, Service e Repository." },
+            ],
+          },
+          {
+            name: "Gin",
+            icon: "gin",
+            used: [
+              { where: "PsiEncontra", what: "Rotas da API." },
+              { where: "Go Opportunities", what: "Rotas da API e middleware de CORS." },
+            ],
+          },
+          {
+            name: "GORM",
+            used: [
+              { where: "PsiEncontra", what: "Acesso ao PostgreSQL." },
+              { where: "Go Opportunities", what: "Consultas isoladas na camada Repository." },
+            ],
+          },
+          {
+            name: "Swagger",
+            icon: "swagger",
+            used: [
+              { where: "Go Opportunities", what: "Documentação gerada a partir do código com swag." },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Frontend",
+        items: [
+          {
+            name: "Next.js",
+            icon: "nextdotjs",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Telas do produto, junto com React e TailwindCSS." },
+              { where: "PsiEncontra", what: "Frontend em Next.js 16 e o Story de 1080×1920 gerado com next/og." },
+              { where: "Go Opportunities", what: "Frontend com busca em tempo real, filtros e dashboard." },
+              { where: "Este portfólio", what: "Next.js 15 com páginas estáticas, em PT e EN." },
+            ],
+          },
+          {
+            name: "React",
+            icon: "react",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Telas novas e Dark Mode em toda a aplicação, desde o estágio." },
+              { where: "PsiEncontra", what: "Interface em React 19." },
+              { where: "Go Opportunities", what: "Interface em React 19." },
+            ],
+          },
+          {
+            name: "React Native",
+            icon: "react",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Apps mobile, da construção à publicação em produção." },
+            ],
+          },
+          {
+            name: "JavaScript",
+            icon: "javascript",
+            used: [
+              { where: "PsiEncontra", what: "Frontend." },
+              { where: "Go Opportunities", what: "Frontend." },
+            ],
+          },
+          {
+            name: "TypeScript",
+            icon: "typescript",
+            used: [
+              { where: "Este portfólio", what: "Todo o código do site." },
+            ],
+          },
+          {
+            name: "TailwindCSS",
+            icon: "tailwindcss",
+            used: [
+              { where: "PontoGO", what: "Estilo das telas do produto." },
+              { where: "PsiEncontra", what: "Tailwind 4." },
+              { where: "Go Opportunities", what: "Tailwind 4." },
+              { where: "Este portfólio", what: "Tailwind 4 com tokens de cor para tema claro e escuro." },
+            ],
+          },
+          {
+            name: "Recharts",
+            used: [
+              { where: "PsiEncontra", what: "Gráficos radar das abordagens e dos campos de atuação." },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Dados",
+        items: [
+          {
+            name: "PostgreSQL",
+            icon: "postgresql",
+            core: true,
+            used: [
+              { where: "PsiEncontra", what: "Banco principal, com GORM." },
+              { where: "Go Opportunities", what: "Banco gerenciado no Neon, separado da API." },
+            ],
+          },
+          {
+            name: "Redis",
+            icon: "redis",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Caches e a invalidação deles, no projeto de cache da plataforma." },
+            ],
+          },
+          {
+            name: "Firestore",
+            icon: "firebase",
+            used: [
+              { where: "PontoGO", what: "Modelagem e integração de dados." },
+            ],
+          },
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "SQLite", icon: "sqlite" },
+        ],
+      },
+      {
+        name: "Infra & Observabilidade",
+        items: [
+          {
+            name: "Docker",
+            icon: "docker",
+            used: [
+              { where: "PsiEncontra", what: "API e banco rodando com Docker Compose." },
+              { where: "Go Opportunities", what: "Dockerfile multi-stage que entrega uma imagem final pequena." },
+            ],
+          },
+          {
+            name: "Grafana",
+            icon: "grafana",
+            used: [
+              { where: "PontoGO", what: "Painéis com as métricas da plataforma." },
+            ],
+          },
+          {
+            name: "Prometheus",
+            icon: "prometheus",
+            used: [
+              { where: "PontoGO", what: "Coleta das métricas da plataforma." },
+            ],
+          },
+          {
+            name: "Vercel",
+            icon: "vercel",
+            used: [
+              { where: "PsiEncontra", what: "Frontend." },
+              { where: "Go Opportunities", what: "Frontend." },
+              { where: "Este portfólio", what: "Hospedagem e Analytics." },
+            ],
+          },
+          {
+            name: "Render",
+            icon: "render",
+            used: [
+              { where: "Go Opportunities", what: "API." },
+            ],
+          },
+          {
+            name: "Railway",
+            icon: "railway",
+            used: [
+              { where: "PsiEncontra", what: "API." },
+            ],
+          },
+          {
+            name: "Neon",
+            used: [
+              { where: "Go Opportunities", what: "PostgreSQL gerenciado." },
+            ],
+          },
+        ],
+      },
+      {
+        name: "IA",
+        items: [
+          {
+            name: "Gemini",
+            icon: "googlegemini",
+            used: [
+              { where: "PsiEncontra", what: "Provedor principal: interpreta as respostas abertas e escreve as explicações do resultado." },
+            ],
+          },
+          {
+            name: "Groq / Llama",
+            icon: "meta",
+            used: [
+              { where: "PsiEncontra", what: "Fallback automático com Llama 3.3 70B quando o Gemini falha." },
+            ],
+          },
+        ],
+      },
     ],
   },
   learning: {
@@ -493,12 +710,217 @@ const en: Content = {
   stack: {
     label: "Stack",
     title: "Tools I use every day",
+    hint: "Hover or tap a technology to see where I used it.",
+    coreLabel: "Core",
     groups: [
-      { name: "Backend", items: ["Go (Golang)", "Gin", "GORM", "REST APIs", "Concurrency", "Swagger"] },
-      { name: "Frontend", items: ["React", "Next.js", "React Native", "JavaScript", "TailwindCSS", "Recharts"] },
-      { name: "Data", items: ["PostgreSQL", "Redis", "MongoDB", "Firestore", "SQLite"] },
-      { name: "Infra & Observability", items: ["Docker", "Grafana", "Prometheus", "Vercel", "Render", "Railway", "Neon"] },
-      { name: "AI", items: ["LLM integration", "Gemini", "Groq / Llama", "Provider fallback"] },
+      {
+        name: "Backend",
+        items: [
+          {
+            name: "Go",
+            icon: "go",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Concurrent APIs for better performance and lower latency." },
+              { where: "PsiEncontra", what: "API and the deterministic scoring of the detailed mode, plus the PDF built with gofpdf." },
+              { where: "Go Opportunities", what: "REST API in Handler, Service and Repository layers." },
+            ],
+          },
+          {
+            name: "Gin",
+            icon: "gin",
+            used: [
+              { where: "PsiEncontra", what: "API routes." },
+              { where: "Go Opportunities", what: "API routes and CORS middleware." },
+            ],
+          },
+          {
+            name: "GORM",
+            used: [
+              { where: "PsiEncontra", what: "PostgreSQL access." },
+              { where: "Go Opportunities", what: "Queries isolated in the Repository layer." },
+            ],
+          },
+          {
+            name: "Swagger",
+            icon: "swagger",
+            used: [
+              { where: "Go Opportunities", what: "Docs generated from the code with swag." },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Frontend",
+        items: [
+          {
+            name: "Next.js",
+            icon: "nextdotjs",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Product screens, together with React and TailwindCSS." },
+              { where: "PsiEncontra", what: "Next.js 16 frontend and the 1080×1920 Story built with next/og." },
+              { where: "Go Opportunities", what: "Frontend with live search, filters and a dashboard." },
+              { where: "This portfolio", what: "Next.js 15 with static pages, in PT and EN." },
+            ],
+          },
+          {
+            name: "React",
+            icon: "react",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "New screens and Dark Mode across the app, since my internship." },
+              { where: "PsiEncontra", what: "React 19 interface." },
+              { where: "Go Opportunities", what: "React 19 interface." },
+            ],
+          },
+          {
+            name: "React Native",
+            icon: "react",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Mobile apps, from building them to shipping them to production." },
+            ],
+          },
+          {
+            name: "JavaScript",
+            icon: "javascript",
+            used: [
+              { where: "PsiEncontra", what: "Frontend." },
+              { where: "Go Opportunities", what: "Frontend." },
+            ],
+          },
+          {
+            name: "TypeScript",
+            icon: "typescript",
+            used: [
+              { where: "This portfolio", what: "All of the site's code." },
+            ],
+          },
+          {
+            name: "TailwindCSS",
+            icon: "tailwindcss",
+            used: [
+              { where: "PontoGO", what: "Styling the product screens." },
+              { where: "PsiEncontra", what: "Tailwind 4." },
+              { where: "Go Opportunities", what: "Tailwind 4." },
+              { where: "This portfolio", what: "Tailwind 4 with color tokens for light and dark themes." },
+            ],
+          },
+          {
+            name: "Recharts",
+            used: [
+              { where: "PsiEncontra", what: "Radar charts for approaches and fields of practice." },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Data",
+        items: [
+          {
+            name: "PostgreSQL",
+            icon: "postgresql",
+            core: true,
+            used: [
+              { where: "PsiEncontra", what: "Main database, with GORM." },
+              { where: "Go Opportunities", what: "Managed database on Neon, separate from the API." },
+            ],
+          },
+          {
+            name: "Redis",
+            icon: "redis",
+            core: true,
+            used: [
+              { where: "PontoGO", what: "Caches and their invalidation, in the platform's caching project." },
+            ],
+          },
+          {
+            name: "Firestore",
+            icon: "firebase",
+            used: [
+              { where: "PontoGO", what: "Data modeling and integration." },
+            ],
+          },
+          { name: "MongoDB", icon: "mongodb" },
+          { name: "SQLite", icon: "sqlite" },
+        ],
+      },
+      {
+        name: "Infra & Observability",
+        items: [
+          {
+            name: "Docker",
+            icon: "docker",
+            used: [
+              { where: "PsiEncontra", what: "API and database running with Docker Compose." },
+              { where: "Go Opportunities", what: "Multi-stage Dockerfile that ships a small final image." },
+            ],
+          },
+          {
+            name: "Grafana",
+            icon: "grafana",
+            used: [
+              { where: "PontoGO", what: "Dashboards with the platform's metrics." },
+            ],
+          },
+          {
+            name: "Prometheus",
+            icon: "prometheus",
+            used: [
+              { where: "PontoGO", what: "Collecting the platform's metrics." },
+            ],
+          },
+          {
+            name: "Vercel",
+            icon: "vercel",
+            used: [
+              { where: "PsiEncontra", what: "Frontend." },
+              { where: "Go Opportunities", what: "Frontend." },
+              { where: "This portfolio", what: "Hosting and Analytics." },
+            ],
+          },
+          {
+            name: "Render",
+            icon: "render",
+            used: [
+              { where: "Go Opportunities", what: "API." },
+            ],
+          },
+          {
+            name: "Railway",
+            icon: "railway",
+            used: [
+              { where: "PsiEncontra", what: "API." },
+            ],
+          },
+          {
+            name: "Neon",
+            used: [
+              { where: "Go Opportunities", what: "Managed PostgreSQL." },
+            ],
+          },
+        ],
+      },
+      {
+        name: "AI",
+        items: [
+          {
+            name: "Gemini",
+            icon: "googlegemini",
+            used: [
+              { where: "PsiEncontra", what: "Main provider: reads the open answers and writes the result explanations." },
+            ],
+          },
+          {
+            name: "Groq / Llama",
+            icon: "meta",
+            used: [
+              { where: "PsiEncontra", what: "Automatic fallback to Llama 3.3 70B when Gemini fails." },
+            ],
+          },
+        ],
+      },
     ],
   },
   learning: {

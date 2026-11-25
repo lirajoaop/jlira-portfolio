@@ -3,6 +3,7 @@ import { MobileMenu } from "./MobileMenu";
 import { ThemeToggle } from "./ThemeToggle";
 import { FlowExplorer } from "./FlowExplorer";
 import { ProjectGallery } from "./ProjectGallery";
+import { StackExplorer } from "./StackExplorer";
 import { blockLabel, ButtonLink, Icon, Monogram, Section, Tag } from "./ui";
 
 export function Home({ locale }: { locale: Locale }) {
@@ -22,7 +23,7 @@ export function Home({ locale }: { locale: Locale }) {
           </div>
         </Section>
         <Section id="stack" label={c.stack.label} title={c.stack.title}>
-          <StackGrid locale={locale} />
+          <StackExplorer groups={c.stack.groups} hint={c.stack.hint} coreLabel={c.stack.coreLabel} />
         </Section>
         <Section id="formacao" label={c.learning.label} title={c.learning.title}>
           <Learning locale={locale} />
@@ -199,27 +200,6 @@ function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
         ))}
       </div>
     </article>
-  );
-}
-
-/* ---------- Stack ---------- */
-function StackGrid({ locale }: { locale: Locale }) {
-  const s = content[locale].stack;
-  return (
-    <dl className="border-b border-line">
-      {s.groups.map((g) => (
-        <div key={g.name} className="grid gap-3 border-t border-line py-5 md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] md:gap-8">
-          <dt className="font-bold">{g.name}</dt>
-          <dd>
-            <ul className="flex flex-wrap gap-2">
-              {g.items.map((it) => (
-                <li key={it} className="rounded-md border border-line bg-surface px-2.5 py-1 text-[15px] font-medium">{it}</li>
-              ))}
-            </ul>
-          </dd>
-        </div>
-      ))}
-    </dl>
   );
 }
 
