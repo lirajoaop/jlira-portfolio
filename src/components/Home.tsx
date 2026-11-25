@@ -27,6 +27,9 @@ export function Home({ locale }: { locale: Locale }) {
         <Section id="formacao" label={c.learning.label} title={c.learning.title}>
           <Learning locale={locale} />
         </Section>
+        <Section id="publicacoes" label={c.publications.label} title={c.publications.title}>
+          <Publications locale={locale} />
+        </Section>
         <Section id="sobre" label={c.about.label} title={c.about.title}>
           <About locale={locale} />
         </Section>
@@ -256,6 +259,34 @@ function Learning({ locale }: { locale: Locale }) {
         ))}
       </ul>
     </div>
+  );
+}
+
+/* ---------- Publications ---------- */
+function Publications({ locale }: { locale: Locale }) {
+  const pb = content[locale].publications;
+  return (
+    <ul className="border-b border-line">
+      {pb.items.map((it) => (
+        <li key={it.href} className="grid gap-1 border-t border-line py-5 md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] md:gap-8">
+          <p className="text-[15px] text-muted">{it.date} · LinkedIn</p>
+          <div className="max-w-[68ch]">
+            <h3 className="text-lg font-bold text-pretty">
+              <a href={it.href} target="_blank" rel="noopener noreferrer" className="group rounded-sm hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+                {it.title.slice(0, it.title.lastIndexOf(" ") + 1)}
+                {/* last word and arrow never wrap apart */}
+                <span className="whitespace-nowrap">
+                  {it.title.slice(it.title.lastIndexOf(" ") + 1)}
+                  <Icon.arrow className="ml-1 inline size-4 align-[-0.1em] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none" />
+                </span>
+                <span className="sr-only">({pb.readLabel})</span>
+              </a>
+            </h3>
+            <p className="mt-1 leading-relaxed text-muted">{it.summary}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }
 

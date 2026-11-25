@@ -84,6 +84,12 @@ export type Content = {
     };
     items: { title: string; org: string; period: string; note?: string }[];
   };
+  publications: {
+    label: string;
+    title: string;
+    readLabel: string;
+    items: { title: string; date: string; summary: string; href: string }[];
+  };
   about: {
     label: string;
     title: string;
@@ -301,6 +307,27 @@ const pt: Content = {
       { title: "Geração Tech 2.0", org: "Certificação", period: "Certificação" },
     ],
   },
+  publications: {
+    label: "Publicações",
+    title: "O que eu escrevo no LinkedIn",
+    readLabel: "Ler no LinkedIn",
+    items: [
+      {
+        title: "O que eu trouxe do DevFest Fortaleza 2026",
+        date: "nov/2026",
+        summary:
+          "Notas das palestras do evento do GDG Fortaleza: o papel do dev quando a IA escreve o código, que deixa de cuidar só da própria parte e passa a planejar, dividir e revisar o trabalho; regras de negócio numa camada própria; e agentes com o Google ADK.",
+        href: "https://www.linkedin.com/posts/jo%C3%A3o-pedro-lira_devfest-devfestfortaleza-gdgfortaleza-ugcPost-7528981043538845696-fE72/",
+      },
+      {
+        title: "Onde a Psicologia e o Código se encontram: PsiEncontra",
+        date: "abr/2026",
+        summary:
+          "Por que criei o PsiEncontra: a angústia de escolher uma abordagem na graduação, o que vi como facilitador no Na Lida da Vida e como Go, Next.js e IA viraram a resposta, no projeto final do Geração Tech 3.0.",
+        href: "https://www.linkedin.com/posts/jo%C3%A3o-pedro-lira_fullstack-golang-nextjs-ugcPost-7450735615211425792-AnTI/",
+      },
+    ],
+  },
   about: {
     label: "Sobre",
     title: "Da Psicologia para a engenharia",
@@ -496,6 +523,27 @@ const en: Content = {
       { title: "Geração Tech 3.0: AI & Soft Skills for Developers", org: "Top 50, Silver Medal", period: "Certification" },
       { title: "Introduction to Go", org: "Certification", period: "Certification" },
       { title: "Geração Tech 2.0", org: "Certification", period: "Certification" },
+    ],
+  },
+  publications: {
+    label: "Writing",
+    title: "What I post on LinkedIn",
+    readLabel: "Read on LinkedIn",
+    items: [
+      {
+        title: "What I took from DevFest Fortaleza 2026",
+        date: "Nov 2026",
+        summary:
+          "Notes from the GDG Fortaleza talks: the developer's role when AI writes the code, moving from owning one piece to planning, splitting and reviewing the work; business rules in their own layer; and agents with Google ADK.",
+        href: "https://www.linkedin.com/posts/jo%C3%A3o-pedro-lira_devfest-devfestfortaleza-gdgfortaleza-ugcPost-7528981043538845696-fE72/",
+      },
+      {
+        title: "Where Psychology and code meet: PsiEncontra",
+        date: "Apr 2026",
+        summary:
+          "Why I built PsiEncontra: the anxiety of choosing a theoretical approach during my Psychology degree, what I saw as a facilitator in Na Lida da Vida, and how Go, Next.js and AI became the answer, as my Geração Tech 3.0 final project.",
+        href: "https://www.linkedin.com/posts/jo%C3%A3o-pedro-lira_fullstack-golang-nextjs-ugcPost-7450735615211425792-AnTI/",
+      },
     ],
   },
   about: {
