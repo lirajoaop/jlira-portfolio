@@ -333,6 +333,7 @@ const pt: Content = {
     paragraphs: [
       "Me formei em Psicologia na UFC, com foco em Psicologia do Trabalho. Fiz parte do NUTRA, o núcleo de Psicologia do Trabalho da universidade, e estagiei em recrutamento e seleção no SINE/IDT.",
       "A virada veio no Na Lida da Vida, um projeto de extensão da UFC sobre o sentido do trabalho e a orientação para o mercado. Enquanto ajudava estudantes a pensar no próprio caminho, fiz a mesma pergunta para mim e percebi que queria construir software. Mudei de rota e fiquei.",
+      "Fora do código, sou movido a música: toco violão, já fui baixista, e The Masterplan, do Oasis, é a que mais toca nos meus fones. Também sou fã de futebol e, quando sobra tempo, jogo um LoL com os amigos.",
     ],
     principlesTitle: "Como eu trabalho",
     principles: [
@@ -550,6 +551,7 @@ const en: Content = {
     paragraphs: [
       "I studied Psychology at the Federal University of Ceará, focusing on work psychology. I was part of NUTRA, the university's work psychology group, and interned in recruitment and selection at SINE/IDT, the public employment service in Ceará.",
       "The turn came in Na Lida da Vida, a UFC outreach project about finding meaning in work and preparing for the job market. While helping students think about their own paths, I asked myself the same question and realized I wanted to build software. I changed course and stayed.",
+      "Outside of code, music keeps me going: I play acoustic guitar, I used to be a bassist, and Oasis's The Masterplan is the song I play the most. I'm also a football fan and, when there's time, I play League of Legends with friends.",
     ],
     principlesTitle: "How I work",
     principles: [
