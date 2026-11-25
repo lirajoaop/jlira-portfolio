@@ -364,7 +364,7 @@ const pt: Content = {
             icon: "typescript",
             core: true,
             used: [
-              { where: "PontoGO", what: "Telas do produto em React e Next.js." },
+              { where: "PontoGO", what: "Apps mobile em React Native." },
               { where: "Este portfólio", what: "Todo o código do site." },
             ],
           },
@@ -787,7 +787,7 @@ const en: Content = {
             icon: "typescript",
             core: true,
             used: [
-              { where: "PontoGO", what: "Product screens in React and Next.js." },
+              { where: "PontoGO", what: "Mobile apps in React Native." },
               { where: "This portfolio", what: "All of the site's code." },
             ],
           },
