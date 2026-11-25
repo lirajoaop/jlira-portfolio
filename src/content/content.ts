@@ -58,7 +58,7 @@ export type Content = {
   projects: {
     label: string;
     title: string;
-    lead: string;
+    lead?: string;
     problemLabel: string;
     solutionLabel: string;
     decisionsLabel: string;
@@ -176,8 +176,7 @@ const pt: Content = {
   },
   projects: {
     label: "Projetos",
-    title: "Estudos de caso",
-    lead: "Os dois estão no ar e o código é aberto. Em cada um conto o problema, as decisões técnicas e o porquê delas.",
+    title: "Dois estudos de caso, os dois no ar e com código aberto",
     problemLabel: "Problema",
     solutionLabel: "Solução",
     decisionsLabel: "Decisões técnicas",
@@ -421,8 +420,7 @@ const en: Content = {
   },
   projects: {
     label: "Projects",
-    title: "Case studies",
-    lead: "Both are live and open source. For each one I cover the problem, the technical decisions and the reasons behind them.",
+    title: "Two case studies, both live and open source",
     problemLabel: "Problem",
     solutionLabel: "Solution",
     decisionsLabel: "Technical decisions",
