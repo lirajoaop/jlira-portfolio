@@ -82,6 +82,51 @@ body {
   to { stroke-dashoffset: 0; }
 }
 
+/* Experience timeline: accent line with a marker per role; the line draws itself while scrolling. */
+.timeline {
+  --pad: 1.5rem;
+  position: relative;
+  padding-left: var(--pad);
+}
+@media (min-width: 40rem) {
+  .timeline { --pad: 2rem; }
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 3px;
+  background: var(--accent);
+  transform-origin: top;
+}
+.timeline > li { position: relative; }
+.timeline > li::before {
+  content: "";
+  position: absolute;
+  top: 0.35rem;
+  left: calc(-1 * var(--pad) - 5.5px);
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+}
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .timeline { view-timeline: --timeline block; }
+    .timeline::before {
+      animation: timeline-draw linear both;
+      animation-timeline: --timeline;
+      animation-range: entry 30% cover 65%;
+    }
+  }
+}
+@keyframes timeline-draw {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .monogram-draw path { animation: none; stroke-dashoffset: 0; }

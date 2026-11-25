@@ -132,7 +132,7 @@ function Experience({ locale }: { locale: Locale }) {
       <p className="text-xl font-bold">
         {e.company}, <span className="font-normal text-muted">{e.location}</span>
       </p>
-      <ol className="mt-8 space-y-12 border-l-[3px] border-accent pl-6 sm:pl-8">
+      <ol className="timeline mt-8 space-y-12">
         {e.roles.map((r) => (
           <li key={r.title}>
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
