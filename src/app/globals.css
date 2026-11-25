@@ -51,6 +51,11 @@ html {
   scroll-padding-top: 1.5rem;
 }
 
+/* Tailwind 4 resets buttons to the default cursor. */
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 body {
   background: var(--bg);
   color: var(--text);

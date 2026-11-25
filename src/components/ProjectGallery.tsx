@@ -10,14 +10,14 @@ export function ProjectGallery({ shots, label }: { shots: Shot[]; label: string 
   const [active, setActive] = useState(0);
   return (
     <figure className="mt-8">
-      <div role="group" aria-label={label} className="flex flex-wrap gap-1.5">
+      <div role="group" aria-label={label} className="flex flex-wrap gap-2">
         {shots.map((s, i) => (
           <button
             key={s.src}
             type="button"
             aria-pressed={i === active}
             onClick={() => setActive(i)}
-            className="rounded-md px-3 py-1.5 text-sm font-medium text-muted transition-colors hover:text-fg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent aria-pressed:bg-surface-2 aria-pressed:text-fg"
+            className="rounded-md border border-line px-3 py-1.5 text-sm font-medium text-fg transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent aria-pressed:border-accent aria-pressed:bg-accent aria-pressed:text-white [[data-theme=dark]_&]:aria-pressed:text-[#04212b]"
           >
             {s.label}
           </button>
