@@ -134,7 +134,7 @@ function Experience({ locale }: { locale: Locale }) {
       </p>
       <ol className="timeline mt-8 space-y-12">
         {e.roles.map((r) => (
-          <li key={r.title}>
+          <li key={r.title} data-current={r.current || undefined}>
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h3 className="text-lg font-bold">{r.title}</h3>
               <p className="text-[15px] text-muted">{r.period}</p>
