@@ -167,11 +167,11 @@ const pt: Content = {
         current: true,
         bullets: [
           "Implementei caches com Redis e a invalidação deles, como parte do projeto de cache da plataforma.",
-          "Desenvolvo e otimizo APIs em Go com goroutines, sync.WaitGroup e semáforos que limitam quantas tarefas rodam ao mesmo tempo, além de gravações em lote (batch) no Firestore.",
+          "Paralelizei em Go a geração de relatórios com grande volume de dados, que rodava em sequência e fazia a página quebrar. Com goroutines, sync.WaitGroup e um semáforo limitando a concorrência, a página voltou a funcionar e ficou bem mais rápida.",
           "Faço o fullstack em React, Next.js e TailwindCSS e os apps mobile em React Native.",
           "Usei Grafana e Prometheus para acompanhar as métricas da plataforma.",
           "Sou responsável por deploys e pela publicação de aplicativos em produção.",
-          "Modelo e integro dados no Firestore e corrijo bugs para manter o sistema estável.",
+          "Modelo e integro dados no Firestore, com gravações em lote (batch), e corrijo bugs para manter o sistema estável.",
           "Treino e acompanho estagiários e participo das entrevistas técnicas.",
         ],
       },
@@ -298,7 +298,7 @@ const pt: Content = {
             icon: "go",
             core: true,
             used: [
-              { where: "PontoGO", what: "APIs com goroutines controladas por semáforo e sync.WaitGroup, além de gravações em lote (batch) no Firestore." },
+              { where: "PontoGO", what: "Geração paralela de relatórios com grande volume de dados: goroutines, sync.WaitGroup e semáforo no lugar da execução em sequência, que fazia a página quebrar." },
               { where: "PsiEncontra", what: "API e pontuação determinística do modo detalhado, além do PDF gerado com gofpdf." },
               { where: "Go Opportunities", what: "API REST em camadas Handler, Service e Repository." },
             ],
@@ -426,7 +426,7 @@ const pt: Content = {
             name: "Firestore",
             icon: "firebase",
             used: [
-              { where: "PontoGO", what: "Modelagem e integração de dados." },
+              { where: "PontoGO", what: "Modelagem e integração de dados, com gravações em lote (batch)." },
             ],
           },
         ],
@@ -626,11 +626,11 @@ const en: Content = {
         current: true,
         bullets: [
           "Implemented Redis caches and their invalidation as part of the platform's caching project.",
-          "Build and tune Go APIs with goroutines, sync.WaitGroup and semaphores that cap how many tasks run at once, plus batched writes to Firestore.",
+          "Parallelized in Go the generation of large reports that ran sequentially and broke the page. With goroutines, sync.WaitGroup and a semaphore capping concurrency, the page worked again and got much faster.",
           "Do fullstack work in React, Next.js and TailwindCSS, plus mobile apps in React Native.",
           "Used Grafana and Prometheus to track platform metrics.",
           "Own deployments and app releases to production.",
-          "Model and integrate data in Firestore and fix bugs to keep the system stable.",
+          "Model and integrate data in Firestore, with batched writes, and fix bugs to keep the system stable.",
           "Train and mentor interns and take part in technical interviews.",
         ],
       },
@@ -730,7 +730,7 @@ const en: Content = {
             icon: "go",
             core: true,
             used: [
-              { where: "PontoGO", what: "APIs with goroutines bounded by a semaphore and sync.WaitGroup, plus batched writes to Firestore." },
+              { where: "PontoGO", what: "Parallel generation of large reports: goroutines, sync.WaitGroup and a semaphore instead of sequential runs, which broke the page." },
               { where: "PsiEncontra", what: "API and the deterministic scoring of the detailed mode, plus the PDF built with gofpdf." },
               { where: "Go Opportunities", what: "REST API in Handler, Service and Repository layers." },
             ],
@@ -858,7 +858,7 @@ const en: Content = {
             name: "Firestore",
             icon: "firebase",
             used: [
-              { where: "PontoGO", what: "Data modeling and integration." },
+              { where: "PontoGO", what: "Data modeling and integration, with batched writes." },
             ],
           },
         ],
