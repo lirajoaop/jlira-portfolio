@@ -346,7 +346,7 @@ const pt: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "Redesign da gestão de pessoas e do painel administrativo, espelho de ponto, assinatura e cancelamento, e diversos modais. Estado com Context e Redux." },
+              { where: "PontoGO", what: "Redesign do back-office, o painel administrativo que atende os clientes white label e a própria empresa. No produto web white label: redesign da gestão de pessoas, espelho de ponto, assinatura e cancelamento, e diversos modais. Estado com Context e Redux." },
               { where: "PsiEncontra", what: "Questionário com escala Likert, resultado com gráficos radar e o login que vincula o resultado à conta." },
               { where: "Go Opportunities", what: "Cards de vagas, formulário em modal com validação, toasts e confirmação antes de excluir." },
             ],
@@ -391,7 +391,7 @@ const pt: Content = {
               { where: "PontoGO", what: "Toda a estilização da aplicação: telas, modais e componentes, incluindo o Dark Mode." },
               { where: "PsiEncontra", what: "Tailwind 4 com design tokens e tema claro e escuro em toda a interface, do questionário ao resultado." },
               { where: "Go Opportunities", what: "Tailwind 4 com tema próprio e Dark Mode." },
-              { where: "Este portfólio", what: "Cores só por design tokens, com tema claro e escuro em todo o site." },
+              { where: "Este portfólio", what: "Sistema visual próprio em Tailwind 4: tokens de cor para tema claro e escuro, escala tipográfica e layout pensado primeiro para o celular." },
             ],
           },
           {
@@ -778,7 +778,7 @@ const en: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "Redesign of the people management page and the admin panel, the timesheet page, subscription and cancellation, and many modals. State with Context and Redux." },
+              { where: "PontoGO", what: "Redesign of the back-office, the admin panel that serves our white-label clients and the company itself. In the white-label web product: redesign of people management, the timesheet page, subscription and cancellation, and many modals. State with Context and Redux." },
               { where: "PsiEncontra", what: "Likert-scale questionnaire, results with radar charts and the login that links the result to the account." },
               { where: "Go Opportunities", what: "Job cards, a modal form with validation, toasts and a confirmation before deleting." },
             ],
@@ -823,7 +823,7 @@ const en: Content = {
               { where: "PontoGO", what: "All of the app's styling: screens, modals and components, including Dark Mode." },
               { where: "PsiEncontra", what: "Tailwind 4 with design tokens and light and dark themes across the whole interface, from the questionnaire to the results." },
               { where: "Go Opportunities", what: "Tailwind 4 with its own theme and Dark Mode." },
-              { where: "This portfolio", what: "Colors only through design tokens, with light and dark themes across the site." },
+              { where: "This portfolio", what: "A custom visual system in Tailwind 4: color tokens for light and dark themes, a type scale and a mobile-first layout." },
             ],
           },
           {
