@@ -335,7 +335,7 @@ const pt: Content = {
             icon: "nextdotjs",
             core: true,
             used: [
-              { where: "PontoGO", what: "Telas do produto, junto com React e TailwindCSS." },
+              { where: "PontoGO", what: "Telas do produto, com renderização no servidor." },
               { where: "PsiEncontra", what: "Frontend em Next.js 16 e o Story de 1080×1920 gerado com next/og." },
               { where: "Go Opportunities", what: "Frontend com busca em tempo real, filtros e dashboard." },
               { where: "Este portfólio", what: "Next.js 15 com páginas estáticas, em PT e EN." },
@@ -346,9 +346,9 @@ const pt: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "Telas novas e Dark Mode em toda a aplicação, desde o estágio." },
-              { where: "PsiEncontra", what: "Interface em React 19." },
-              { where: "Go Opportunities", what: "Interface em React 19." },
+              { where: "PontoGO", what: "Redesign da gestão de pessoas e do painel administrativo, espelho de ponto, assinatura e cancelamento, e diversos modais. Estado com Context e Redux." },
+              { where: "PsiEncontra", what: "Questionário com escala Likert, resultado com gráficos radar e o login que vincula o resultado à conta." },
+              { where: "Go Opportunities", what: "Cards de vagas, formulário em modal com validação, toasts e confirmação antes de excluir." },
             ],
           },
           {
@@ -372,18 +372,26 @@ const pt: Content = {
             name: "JavaScript",
             icon: "javascript",
             used: [
-              { where: "PsiEncontra", what: "Frontend." },
-              { where: "Go Opportunities", what: "Frontend." },
+              { where: "PontoGO", what: "A lógica da aplicação: formulários complexos com validação, como escalas, tolerâncias e regras de jornada, além de logs e relatórios em PDF e Excel." },
+              { where: "PsiEncontra", what: "Toda a lógica do frontend, do login ao questionário, aos resultados e ao compartilhamento." },
+              { where: "Go Opportunities", what: "Busca em tempo real, filtros, estatísticas e formulário com validação campo a campo, só com React e Next.js." },
+            ],
+          },
+          {
+            name: "Redux",
+            icon: "redux",
+            used: [
+              { where: "PontoGO", what: "Store e slices do estado global, inclusive nas páginas renderizadas no servidor." },
             ],
           },
           {
             name: "TailwindCSS",
             icon: "tailwindcss",
             used: [
-              { where: "PontoGO", what: "Estilo das telas do produto." },
-              { where: "PsiEncontra", what: "Tailwind 4." },
-              { where: "Go Opportunities", what: "Tailwind 4." },
-              { where: "Este portfólio", what: "Tailwind 4 com tokens de cor para tema claro e escuro." },
+              { where: "PontoGO", what: "Toda a estilização da aplicação: telas, modais e componentes, incluindo o Dark Mode." },
+              { where: "PsiEncontra", what: "Tailwind 4 com design tokens e tema claro e escuro em toda a interface, do questionário ao resultado." },
+              { where: "Go Opportunities", what: "Tailwind 4 com tema próprio e Dark Mode." },
+              { where: "Este portfólio", what: "Cores só por design tokens, com tema claro e escuro em todo o site." },
             ],
           },
           {
@@ -452,9 +460,10 @@ const pt: Content = {
             name: "Vercel",
             icon: "vercel",
             used: [
-              { where: "PsiEncontra", what: "Frontend." },
-              { where: "Go Opportunities", what: "Frontend." },
-              { where: "Este portfólio", what: "Hospedagem e Analytics." },
+              { where: "PontoGO", what: "Acompanhamento dos deploys, configuração de domínios e métricas." },
+              { where: "PsiEncontra", what: "Frontend e funções no servidor: a imagem do Story gerada na hora e uma prévia própria de cada resultado quando o link é compartilhado." },
+              { where: "Go Opportunities", what: "Frontend publicado à parte, com a API no Render e o banco no Neon." },
+              { where: "Este portfólio", what: "Uma prévia publicada para cada PR antes do merge, e Analytics que separa as visitas por origem." },
             ],
           },
           {
@@ -758,7 +767,7 @@ const en: Content = {
             icon: "nextdotjs",
             core: true,
             used: [
-              { where: "PontoGO", what: "Product screens, together with React and TailwindCSS." },
+              { where: "PontoGO", what: "Product screens, with server-side rendering." },
               { where: "PsiEncontra", what: "Next.js 16 frontend and the 1080×1920 Story built with next/og." },
               { where: "Go Opportunities", what: "Frontend with live search, filters and a dashboard." },
               { where: "This portfolio", what: "Next.js 15 with static pages, in PT and EN." },
@@ -769,9 +778,9 @@ const en: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "New screens and Dark Mode across the app, since my internship." },
-              { where: "PsiEncontra", what: "React 19 interface." },
-              { where: "Go Opportunities", what: "React 19 interface." },
+              { where: "PontoGO", what: "Redesign of the people management page and the admin panel, the timesheet page, subscription and cancellation, and many modals. State with Context and Redux." },
+              { where: "PsiEncontra", what: "Likert-scale questionnaire, results with radar charts and the login that links the result to the account." },
+              { where: "Go Opportunities", what: "Job cards, a modal form with validation, toasts and a confirmation before deleting." },
             ],
           },
           {
@@ -795,18 +804,26 @@ const en: Content = {
             name: "JavaScript",
             icon: "javascript",
             used: [
-              { where: "PsiEncontra", what: "Frontend." },
-              { where: "Go Opportunities", what: "Frontend." },
+              { where: "PontoGO", what: "The app's logic: complex forms with validation, such as work schedules, tolerances and working-hours rules, plus logs and PDF and Excel reports." },
+              { where: "PsiEncontra", what: "All of the frontend logic, from login to the questionnaire, the results and sharing." },
+              { where: "Go Opportunities", what: "Live search, filters, stats and a form with per-field validation, using only React and Next.js." },
+            ],
+          },
+          {
+            name: "Redux",
+            icon: "redux",
+            used: [
+              { where: "PontoGO", what: "Global state store and slices, including on server-rendered pages." },
             ],
           },
           {
             name: "TailwindCSS",
             icon: "tailwindcss",
             used: [
-              { where: "PontoGO", what: "Styling the product screens." },
-              { where: "PsiEncontra", what: "Tailwind 4." },
-              { where: "Go Opportunities", what: "Tailwind 4." },
-              { where: "This portfolio", what: "Tailwind 4 with color tokens for light and dark themes." },
+              { where: "PontoGO", what: "All of the app's styling: screens, modals and components, including Dark Mode." },
+              { where: "PsiEncontra", what: "Tailwind 4 with design tokens and light and dark themes across the whole interface, from the questionnaire to the results." },
+              { where: "Go Opportunities", what: "Tailwind 4 with its own theme and Dark Mode." },
+              { where: "This portfolio", what: "Colors only through design tokens, with light and dark themes across the site." },
             ],
           },
           {
@@ -875,9 +892,10 @@ const en: Content = {
             name: "Vercel",
             icon: "vercel",
             used: [
-              { where: "PsiEncontra", what: "Frontend." },
-              { where: "Go Opportunities", what: "Frontend." },
-              { where: "This portfolio", what: "Hosting and Analytics." },
+              { where: "PontoGO", what: "Monitoring deploys, setting up domains and metrics." },
+              { where: "PsiEncontra", what: "Frontend and server functions: the Story image generated on demand and a preview of each result when its link is shared." },
+              { where: "Go Opportunities", what: "Frontend deployed on its own, with the API on Render and the database on Neon." },
+              { where: "This portfolio", what: "A preview deployed for every PR before merging, and Analytics that splits visits by source." },
             ],
           },
           {
