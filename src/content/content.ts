@@ -730,7 +730,7 @@ const en: Content = {
             icon: "go",
             core: true,
             used: [
-              { where: "PontoGO", what: "Parallel generation of large reports: goroutines, sync.WaitGroup and a semaphore instead of sequential processing, which caused the page to fail to load." },
+              { where: "PontoGO", what: "Parallel generation of high-volume reports: goroutines, sync.WaitGroup and a semaphore instead of sequential processing, which caused the page to fail to load." },
               { where: "PsiEncontra", what: "API and the deterministic scoring of the detailed mode, plus the PDF built with gofpdf." },
               { where: "Go Opportunities", what: "REST API in Handler, Service and Repository layers." },
             ],
