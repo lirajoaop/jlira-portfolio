@@ -346,7 +346,7 @@ const pt: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "Criei as páginas de espelho de ponto e de assinatura e cancelamento. Fiz o redesign da gestão de pessoas e do back-office, o painel administrativo, entre outras telas e diversos modais. Estado com Context e Redux." },
+              { where: "PontoGO", what: "Criei as páginas de espelho de ponto e de assinatura e cancelamento. Fiz o redesign da gestão de pessoas e do back-office, o painel administrativo, entre outras telas e diversos modais, sempre com o estado gerenciado por Context e Redux." },
               { where: "PsiEncontra", what: "Questionário com escala Likert, resultado com gráficos radar e o login que vincula o resultado à conta." },
               { where: "Go Opportunities", what: "Cards de vagas, formulário em modal com validação, toasts e confirmação antes de excluir." },
             ],
@@ -778,7 +778,7 @@ const en: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "Built the timesheet page and the subscription and cancellation pages. Redesigned people management and the back-office admin panel, among other screens and many modals. State with Context and Redux." },
+              { where: "PontoGO", what: "Built the timesheet page and the subscription and cancellation pages. Redesigned people management and the back-office admin panel, among other screens and many modals, always with state managed through Context and Redux." },
               { where: "PsiEncontra", what: "Likert-scale questionnaire, results with radar charts and the login that links the result to the account." },
               { where: "Go Opportunities", what: "Job cards, a modal form with validation, toasts and a confirmation before deleting." },
             ],
