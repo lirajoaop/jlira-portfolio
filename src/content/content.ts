@@ -346,7 +346,7 @@ const pt: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "Redesign do back-office, o painel administrativo que atende os clientes white label e a própria empresa. No produto web white label: redesign da gestão de pessoas, espelho de ponto, assinatura e cancelamento, e diversos modais. Estado com Context e Redux." },
+              { where: "PontoGO", what: "Criei as páginas de espelho de ponto e de assinatura e cancelamento. Fiz o redesign da gestão de pessoas e do back-office, o painel administrativo, entre outras telas e diversos modais. Estado com Context e Redux." },
               { where: "PsiEncontra", what: "Questionário com escala Likert, resultado com gráficos radar e o login que vincula o resultado à conta." },
               { where: "Go Opportunities", what: "Cards de vagas, formulário em modal com validação, toasts e confirmação antes de excluir." },
             ],
@@ -778,7 +778,7 @@ const en: Content = {
             icon: "react",
             core: true,
             used: [
-              { where: "PontoGO", what: "Redesign of the back-office, the admin panel that serves our white-label clients and the company itself. In the white-label web product: redesign of people management, the timesheet page, subscription and cancellation, and many modals. State with Context and Redux." },
+              { where: "PontoGO", what: "Built the timesheet page and the subscription and cancellation pages. Redesigned people management and the back-office admin panel, among other screens and many modals. State with Context and Redux." },
               { where: "PsiEncontra", what: "Likert-scale questionnaire, results with radar charts and the login that links the result to the account." },
               { where: "Go Opportunities", what: "Job cards, a modal form with validation, toasts and a confirmation before deleting." },
             ],
