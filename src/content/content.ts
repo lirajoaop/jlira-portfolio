@@ -167,7 +167,7 @@ const pt: Content = {
         current: true,
         bullets: [
           "Implementei caches com Redis e a invalidação deles, como parte do projeto de cache da plataforma.",
-          "Desenvolvo e otimizo APIs em Go, usando concorrência para ganhar desempenho e baixar a latência.",
+          "Desenvolvo e otimizo APIs em Go com goroutines, sync.WaitGroup e semáforos que limitam quantas tarefas rodam ao mesmo tempo, além de gravações em lote (batch) no Firestore.",
           "Faço o fullstack em React, Next.js e TailwindCSS e os apps mobile em React Native.",
           "Usei Grafana e Prometheus para acompanhar as métricas da plataforma.",
           "Sou responsável por deploys e pela publicação de aplicativos em produção.",
@@ -298,7 +298,7 @@ const pt: Content = {
             icon: "go",
             core: true,
             used: [
-              { where: "PontoGO", what: "APIs com concorrência para ganhar desempenho e baixar a latência." },
+              { where: "PontoGO", what: "APIs com goroutines controladas por semáforo e sync.WaitGroup, além de gravações em lote (batch) no Firestore." },
               { where: "PsiEncontra", what: "API e pontuação determinística do modo detalhado, além do PDF gerado com gofpdf." },
               { where: "Go Opportunities", what: "API REST em camadas Handler, Service e Repository." },
             ],
@@ -626,7 +626,7 @@ const en: Content = {
         current: true,
         bullets: [
           "Implemented Redis caches and their invalidation as part of the platform's caching project.",
-          "Build and tune Go APIs, using concurrency for better throughput and lower latency.",
+          "Build and tune Go APIs with goroutines, sync.WaitGroup and semaphores that cap how many tasks run at once, plus batched writes to Firestore.",
           "Do fullstack work in React, Next.js and TailwindCSS, plus mobile apps in React Native.",
           "Used Grafana and Prometheus to track platform metrics.",
           "Own deployments and app releases to production.",
@@ -730,7 +730,7 @@ const en: Content = {
             icon: "go",
             core: true,
             used: [
-              { where: "PontoGO", what: "Concurrent APIs for better performance and lower latency." },
+              { where: "PontoGO", what: "APIs with goroutines bounded by a semaphore and sync.WaitGroup, plus batched writes to Firestore." },
               { where: "PsiEncontra", what: "API and the deterministic scoring of the detailed mode, plus the PDF built with gofpdf." },
               { where: "Go Opportunities", what: "REST API in Handler, Service and Repository layers." },
             ],
