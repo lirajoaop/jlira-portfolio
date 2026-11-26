@@ -167,7 +167,7 @@ const pt: Content = {
         current: true,
         bullets: [
           "Implementei caches com Redis e a invalidação deles, como parte do projeto de cache da plataforma.",
-          "Paralelizei em Go a geração de relatórios com grande volume de dados, que rodava em sequência e fazia a página quebrar. Com goroutines, sync.WaitGroup e um semáforo limitando a concorrência, a página voltou a funcionar e ficou bem mais rápida.",
+          "Paralelizei em Go a geração de relatórios com grande volume de dados, antes processada em sequência e responsável por falhas no carregamento da página. Com goroutines, sync.WaitGroup e um semáforo limitando a concorrência, a página se estabilizou e ganhou desempenho.",
           "Faço o fullstack em React, Next.js e TailwindCSS e os apps mobile em React Native.",
           "Usei Grafana e Prometheus para acompanhar as métricas da plataforma.",
           "Sou responsável por deploys e pela publicação de aplicativos em produção.",
@@ -298,7 +298,7 @@ const pt: Content = {
             icon: "go",
             core: true,
             used: [
-              { where: "PontoGO", what: "Geração paralela de relatórios com grande volume de dados: goroutines, sync.WaitGroup e semáforo no lugar da execução em sequência, que fazia a página quebrar." },
+              { where: "PontoGO", what: "Geração paralela de relatórios com grande volume de dados: goroutines, sync.WaitGroup e semáforo no lugar do processamento em sequência, que causava falhas no carregamento da página." },
               { where: "PsiEncontra", what: "API e pontuação determinística do modo detalhado, além do PDF gerado com gofpdf." },
               { where: "Go Opportunities", what: "API REST em camadas Handler, Service e Repository." },
             ],
@@ -626,7 +626,7 @@ const en: Content = {
         current: true,
         bullets: [
           "Implemented Redis caches and their invalidation as part of the platform's caching project.",
-          "Parallelized in Go the generation of large reports that ran sequentially and broke the page. With goroutines, sync.WaitGroup and a semaphore capping concurrency, the page worked again and got much faster.",
+          "Parallelized in Go the generation of high-volume reports, previously processed sequentially and causing the page to fail to load. With goroutines, sync.WaitGroup and a semaphore capping concurrency, the page became stable and faster.",
           "Do fullstack work in React, Next.js and TailwindCSS, plus mobile apps in React Native.",
           "Used Grafana and Prometheus to track platform metrics.",
           "Own deployments and app releases to production.",
@@ -730,7 +730,7 @@ const en: Content = {
             icon: "go",
             core: true,
             used: [
-              { where: "PontoGO", what: "Parallel generation of large reports: goroutines, sync.WaitGroup and a semaphore instead of sequential runs, which broke the page." },
+              { where: "PontoGO", what: "Parallel generation of large reports: goroutines, sync.WaitGroup and a semaphore instead of sequential processing, which caused the page to fail to load." },
               { where: "PsiEncontra", what: "API and the deterministic scoring of the detailed mode, plus the PDF built with gofpdf." },
               { where: "Go Opportunities", what: "REST API in Handler, Service and Repository layers." },
             ],
