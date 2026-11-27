@@ -563,9 +563,18 @@ const pt: Content = {
     ],
     principlesTitle: "Como eu trabalho",
     principles: [
-      { title: "Problema antes da ferramenta", body: "Primeiro entendo o que precisa ser resolvido. A tecnologia vem depois." },
-      { title: "Simples e observável", body: "Prefiro código que qualquer pessoa do time consegue ler, com métricas para saber como ele se comporta em produção." },
-      { title: "Entrega de ponta a ponta", body: "Vou do banco de dados à interface, passando pelo deploy." },
+      {
+        title: "Contexto antes do código",
+        body: "Antes de qualquer alteração, levanto o contexto do problema: frequência, reprodutibilidade, impacto e urgência. Quando a solução extrapola o meu escopo, escalo com o diagnóstico do que foi investigado, testado e esperado.",
+      },
+      {
+        title: "Menor alteração, efeito controlado",
+        body: "Priorizo a menor alteração capaz de resolver o problema, reduzindo o risco de efeitos colaterais em outros fluxos. A entrega só é concluída após a validação em produção, com acompanhamento de logs e métricas.",
+      },
+      {
+        title: "Revisão como diálogo",
+        body: "Nas revisões, cobro consistência de padrões, indentação e nomenclatura clara de variáveis e funções. Conduzo a revisão como diálogo: verifico se a solução faz sentido para quem a escreveu e mantenho abertura para rever a minha posição.",
+      },
     ],
   },
   contact: {
@@ -995,9 +1004,18 @@ const en: Content = {
     ],
     principlesTitle: "How I work",
     principles: [
-      { title: "Problem before tool", body: "I start by understanding what needs to be solved. The technology comes after." },
-      { title: "Simple and observable", body: "I prefer code anyone on the team can read, with metrics that show how it behaves in production." },
-      { title: "End-to-end delivery", body: "I work from the database to the interface, including deploys." },
+      {
+        title: "Context before code",
+        body: "Before any change, I gather the problem's context: frequency, reproducibility, impact and urgency. When the solution goes beyond my scope, I escalate with a diagnosis of what was investigated, tested and expected.",
+      },
+      {
+        title: "Smallest change, controlled impact",
+        body: "I favor the smallest change that solves the problem, reducing the risk of side effects in other flows. A delivery is only done after it is validated in production, with logs and metrics monitored.",
+      },
+      {
+        title: "Review as dialogue",
+        body: "In reviews, I check for consistent patterns, indentation and clear naming of variables and functions. I run the review as a dialogue: I make sure the solution makes sense to whoever wrote it and stay open to changing my mind.",
+      },
     ],
   },
   contact: {
