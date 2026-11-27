@@ -62,6 +62,7 @@ export type Content = {
     label: string;
     title: string;
     company: string;
+    companyAbout: string;
     location: string;
     roles: { title: string; period: string; current?: boolean; bullets: string[] }[];
   };
@@ -159,6 +160,7 @@ const pt: Content = {
     label: "Experiência",
     title: "O que eu já entreguei em produção",
     company: "PontoGO",
+    companyAbout: "Plataforma de controle de ponto e gestão de jornada",
     location: "Fortaleza, CE",
     roles: [
       {
@@ -627,6 +629,7 @@ const en: Content = {
     label: "Experience",
     title: "What I've shipped to production",
     company: "PontoGO",
+    companyAbout: "Time tracking and working-hours management platform",
     location: "Fortaleza, Brazil",
     roles: [
       {

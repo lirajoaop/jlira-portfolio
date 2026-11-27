@@ -133,6 +133,7 @@ function Experience({ locale }: { locale: Locale }) {
       <p className="text-xl font-bold">
         {e.company}, <span className="font-normal text-muted">{e.location}</span>
       </p>
+      <p className="mt-1 text-muted">{e.companyAbout}</p>
       <ol className="timeline mt-8 space-y-12">
         {e.roles.map((r) => (
           <li key={r.title} data-current={r.current || undefined}>
