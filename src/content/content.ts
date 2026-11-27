@@ -166,7 +166,7 @@ const pt: Content = {
         period: "mai/2025 até hoje",
         current: true,
         bullets: [
-          "Implementei caches com Redis e a invalidação deles, como parte do projeto de cache da plataforma.",
+          "Implementei caches com Redis e sua lógica de invalidação, como parte do projeto de cache da plataforma.",
           "Paralelizei em Go a geração de relatórios com grande volume de dados, antes processada em sequência e responsável por falhas no carregamento da página. Com goroutines, sync.WaitGroup e um semáforo limitando a concorrência, a página se estabilizou e ganhou desempenho.",
           "Faço o fullstack em React, Next.js e TailwindCSS e os apps mobile em React Native.",
           "Usei Grafana e Prometheus para acompanhar as métricas da plataforma.",
@@ -419,7 +419,7 @@ const pt: Content = {
             icon: "redis",
             core: true,
             used: [
-              { where: "PontoGO", what: "Caches e a invalidação deles, no projeto de cache da plataforma." },
+              { where: "PontoGO", what: "Caches e sua lógica de invalidação, no projeto de cache da plataforma." },
             ],
           },
           {
@@ -634,7 +634,7 @@ const en: Content = {
         period: "May 2025 to present",
         current: true,
         bullets: [
-          "Implemented Redis caches and their invalidation as part of the platform's caching project.",
+          "Implemented Redis caches and their invalidation logic as part of the platform's caching project.",
           "Parallelized in Go the generation of high-volume reports, previously processed sequentially and causing the page to fail to load. With goroutines, sync.WaitGroup and a semaphore capping concurrency, the page became stable and faster.",
           "Do fullstack work in React, Next.js and TailwindCSS, plus mobile apps in React Native.",
           "Used Grafana and Prometheus to track platform metrics.",
@@ -860,7 +860,7 @@ const en: Content = {
             icon: "redis",
             core: true,
             used: [
-              { where: "PontoGO", what: "Caches and their invalidation, in the platform's caching project." },
+              { where: "PontoGO", what: "Caches and their invalidation logic, in the platform's caching project." },
             ],
           },
           {
