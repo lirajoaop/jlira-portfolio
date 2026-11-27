@@ -16,9 +16,9 @@ export function Home({ locale }: { locale: Locale }) {
           <Experience locale={locale} />
         </Section>
         <Section id="projetos" label={c.projects.label} title={c.projects.title} lead={c.projects.lead}>
-          <div className="space-y-20">
-            {c.projects.items.map((p) => (
-              <ProjectCase key={p.slug} p={p} locale={locale} />
+          <div className="divide-y divide-line">
+            {c.projects.items.map((p, i) => (
+              <ProjectCase key={p.slug} p={p} locale={locale} n={i + 1} total={c.projects.items.length} />
             ))}
           </div>
         </Section>
@@ -154,11 +154,16 @@ function Experience({ locale }: { locale: Locale }) {
 }
 
 /* ---------- Projects ---------- */
-function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
+function ProjectCase({ p, locale, n, total }: { p: Project; locale: Locale; n: number; total: number }) {
   const l = content[locale].projects;
+  const pad = (x: number) => String(x).padStart(2, "0");
   return (
-    <article id={p.slug} aria-labelledby={`${p.slug}-name`}>
-      <p className="font-medium text-accent">{p.kicker}</p>
+    <article id={p.slug} aria-labelledby={`${p.slug}-name`} className="py-16 first:pt-0 last:pb-0">
+      <p className="flex items-baseline gap-3 font-medium text-accent">
+        <span className="font-black tabular-nums">{pad(n)}<span className="font-medium text-muted">/{pad(total)}</span></span>
+        <span aria-hidden className="h-px w-6 bg-accent/50 self-center" />
+        {p.kicker}
+      </p>
       <h3 id={`${p.slug}-name`} className="mt-1 text-2xl font-bold tracking-tight sm:text-3xl">{p.name}</h3>
       <p className="mt-4 max-w-[68ch] text-lg leading-relaxed text-pretty">{p.tagline}</p>
 
@@ -205,41 +210,56 @@ function ProjectCase({ p, locale }: { p: Project; locale: Locale }) {
 }
 
 /* ---------- Learning ---------- */
+/** Two rows (degrees, courses); every entry has the same title weight, and the featured course keeps its modules in a card. */
 function Learning({ locale }: { locale: Locale }) {
   const l = content[locale].learning;
   const f = l.featured;
+  const meta = (it: (typeof l.items)[number]) => `${it.org}${it.period !== it.org && /\d/.test(it.period) ? `, ${it.period}` : ""}`;
+  const pill = "rounded-full bg-accent-soft px-2.5 py-0.5 text-sm font-medium text-accent";
+  const rows = [
+    { name: l.degreesLabel, items: l.items.filter((it) => it.kind === "degree"), featured: false },
+    { name: l.coursesLabel, items: l.items.filter((it) => it.kind === "course"), featured: true },
+  ];
   return (
-    <div className="space-y-12">
-      <div>
-        <p className="font-medium text-accent">{f.badge}</p>
-        <h3 className="mt-1 text-2xl font-bold tracking-tight">{f.name}</h3>
-        <p className="mt-1 text-muted">{f.org}</p>
-        <p className="mt-3 max-w-[68ch] leading-relaxed">{f.body}</p>
-        <ol className="mt-6 grid gap-x-12 gap-y-6 sm:grid-cols-2">
-          {f.modules.map((m) => (
-            <li key={m.n} className="flex gap-4">
-              <span className="text-2xl leading-none font-black text-accent" aria-hidden>{Number(m.n)}</span>
-              <div>
-                <p className="font-bold">{m.title}</p>
-                <p className="mt-1 leading-relaxed text-muted">{m.body}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
-      <ul className="grid gap-x-12 gap-y-6 sm:grid-cols-2">
-        {l.items.map((it) => (
-          <li key={it.title}>
-            <p className="font-bold leading-snug">{it.title}</p>
-            <p className="mt-1 text-muted">
-              {it.org}
-              {it.period !== it.org && it.period.match(/\d/) ? `, ${it.period}` : ""}
-              {it.note ? `. ${it.note}` : ""}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <dl className="border-b border-line">
+      {rows.map((r) => (
+        <div key={r.name} className="grid gap-6 border-t border-line py-8 md:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] md:gap-8">
+          <dt className="font-bold text-accent">{r.name}</dt>
+          <dd>
+            <ul className="space-y-7">
+              {r.featured && (
+                <li>
+                  <p className="text-lg font-bold leading-snug">{f.name}</p>
+                  <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-muted">
+                    {f.org} <span className={pill}>{f.badge}</span>
+                  </p>
+                  <p className="mt-2 max-w-[68ch] leading-relaxed text-muted">{f.body}</p>
+                  <ol className="mt-4 grid gap-x-10 gap-y-5 rounded-md bg-surface-2 p-5 sm:grid-cols-2">
+                    {f.modules.map((m) => (
+                      <li key={m.n} className="flex gap-3">
+                        <span className="font-black text-accent tabular-nums" aria-hidden>{m.n}</span>
+                        <div>
+                          <p className="font-bold leading-snug">{m.title}</p>
+                          <p className="mt-1 text-[15px] leading-relaxed text-muted">{m.body}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </li>
+              )}
+              {r.items.map((it) => (
+                <li key={it.title}>
+                  <p className="text-lg font-bold leading-snug">{it.title}</p>
+                  <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-muted">
+                    {meta(it)} {it.note && <span className={pill}>{it.note}</span>}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }
 

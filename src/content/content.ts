@@ -95,7 +95,9 @@ export type Content = {
       body: string;
       modules: { n: string; title: string; body: string }[];
     };
-    items: { title: string; org: string; period: string; note?: string }[];
+    degreesLabel: string;
+    coursesLabel: string;
+    items: { title: string; org: string; period: string; note?: string; kind: "degree" | "course" }[];
   };
   publications: {
     label: string;
@@ -516,6 +518,8 @@ const pt: Content = {
   learning: {
     label: "Formação",
     title: "Continuo estudando",
+    degreesLabel: "Graduação",
+    coursesLabel: "Cursos e certificações",
     featured: {
       badge: "Em conclusão em 2026",
       name: "Engenharia de Software com IA",
@@ -529,11 +533,11 @@ const pt: Content = {
       ],
     },
     items: [
-      { title: "Análise e Desenvolvimento de Sistemas", org: "UNIGRANDE", period: "2025 a 2027", note: "Em andamento" },
-      { title: "Bacharelado em Psicologia", org: "Universidade Federal do Ceará (UFC)", period: "2020 a 2025" },
-      { title: "Geração Tech 3.0: IA e Soft Skills para Programadores", org: "Top 50, Medalha de Prata", period: "Certificação" },
-      { title: "Introdução ao Go", org: "Certificação", period: "Certificação" },
-      { title: "Geração Tech 2.0", org: "Certificação", period: "Certificação" },
+      { title: "Análise e Desenvolvimento de Sistemas", org: "UNIGRANDE", period: "2025 a 2027", note: "Em andamento", kind: "degree" },
+      { title: "Bacharelado em Psicologia", org: "Universidade Federal do Ceará (UFC)", period: "2020 a 2025", kind: "degree" },
+      { title: "Geração Tech 3.0: IA e Soft Skills para Programadores", org: "Top 50, Medalha de Prata", period: "Certificação", kind: "course" },
+      { title: "Introdução ao Go", org: "Certificação", period: "Certificação", kind: "course" },
+      { title: "Geração Tech 2.0", org: "Certificação", period: "Certificação", kind: "course" },
     ],
   },
   publications: {
@@ -960,6 +964,8 @@ const en: Content = {
   learning: {
     label: "Education",
     title: "Still learning",
+    degreesLabel: "Degrees",
+    coursesLabel: "Courses and certifications",
     featured: {
       badge: "Finishing in 2026",
       name: "Software Engineering with AI",
@@ -973,11 +979,11 @@ const en: Content = {
       ],
     },
     items: [
-      { title: "Systems Analysis and Development (associate degree)", org: "UNIGRANDE", period: "2025 to 2027", note: "In progress" },
-      { title: "B.Sc. in Psychology", org: "Federal University of Ceará (UFC)", period: "2020 to 2025" },
-      { title: "Geração Tech 3.0: AI & Soft Skills for Developers", org: "Top 50, Silver Medal", period: "Certification" },
-      { title: "Introduction to Go", org: "Certification", period: "Certification" },
-      { title: "Geração Tech 2.0", org: "Certification", period: "Certification" },
+      { title: "Systems Analysis and Development (associate degree)", org: "UNIGRANDE", period: "2025 to 2027", note: "In progress", kind: "degree" },
+      { title: "B.Sc. in Psychology", org: "Federal University of Ceará (UFC)", period: "2020 to 2025", kind: "degree" },
+      { title: "Geração Tech 3.0: AI & Soft Skills for Developers", org: "Top 50, Silver Medal", period: "Certification", kind: "course" },
+      { title: "Introduction to Go", org: "Certification", period: "Certification", kind: "course" },
+      { title: "Geração Tech 2.0", org: "Certification", period: "Certification", kind: "course" },
     ],
   },
   publications: {
