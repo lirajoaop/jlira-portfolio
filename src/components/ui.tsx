@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
-/** Page section: one heading block on top (title, muted subtitle, optional lead), content below at full width. `soft` puts it on a full-width tinted band. */
-export function Section({ id, label, title, children, lead, soft }: { id: string; label: string; title: string; lead?: string; soft?: boolean; children: ReactNode }) {
+/** Page section: one heading block on top (title, muted subtitle, optional lead), content below at full width. `soft` puts it on a full-width tinted band; `reveal` animates the title (see `.reveal`). */
+export function Section({ id, label, title, children, lead, soft, reveal }: { id: string; label: string; title: string; lead?: string; soft?: boolean; reveal?: boolean; children: ReactNode }) {
   const section = (
     <section id={id} aria-labelledby={`${id}-title`} className={`mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 ${soft ? "" : "border-t border-line first:border-t-0"}`}>
       <header className="max-w-[68ch]">
-        <h2 id={`${id}-title`} className="reveal text-4xl font-black tracking-[-0.03em] text-balance sm:text-5xl">{label}</h2>
+        <h2 id={`${id}-title`} className={`${reveal ? "reveal " : ""}text-4xl font-black tracking-[-0.03em] text-balance sm:text-5xl`}>{label}</h2>
         <p className="mt-3 text-lg text-muted text-pretty">{title}</p>
         {lead && <p className="mt-2 leading-relaxed text-muted text-pretty">{lead}</p>}
       </header>

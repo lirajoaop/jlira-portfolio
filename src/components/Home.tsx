@@ -16,7 +16,7 @@ export function Home({ locale }: { locale: Locale }) {
         <Section id="experiencia" label={c.experience.label} title={c.experience.title}>
           <Experience locale={locale} />
         </Section>
-        <Section id="projetos" label={c.projects.label} title={c.projects.title} lead={c.projects.lead}>
+        <Section id="projetos" label={c.projects.label} title={c.projects.title} lead={c.projects.lead} reveal>
           <div className="divide-y divide-line">
             {c.projects.items.map((p, i) => (
               <ProjectCase key={p.slug} p={p} locale={locale} n={i + 1} total={c.projects.items.length} />
