@@ -81,7 +81,7 @@ export function StackExplorer({ groups, hint, coreLabel }: { groups: Group[]; hi
         ))}
       </dl>
 
-      <div ref={panel} aria-live="polite" className="mt-6 min-h-[9.5rem] scroll-mb-6 rounded-md bg-surface-2 p-5">
+      <div ref={panel} aria-live="polite" className="mt-6 min-h-[9.5rem] scroll-mb-6 rounded-md border border-line bg-surface p-5">
         {current?.used && (
           <>
             <p className="flex items-center gap-2 text-lg font-bold">

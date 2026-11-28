@@ -130,6 +130,30 @@ body {
   70%, to { transform: scale(2.6); opacity: 0; }
 }
 
+/* Section titles: a block in the band color sweeps across and reveals the text, once, when it scrolls into view. */
+.reveal { position: relative; display: inline-block; }
+.reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0.08em -0.1em 0;
+  background: var(--reveal-block, var(--band));
+  transform: scaleX(0);
+  pointer-events: none;
+}
+.reveal.is-armed:not(.is-in) { color: transparent; }
+.reveal.is-in { animation: reveal-ink 0.9s linear both; }
+.reveal.is-in::after { animation: reveal-block 0.9s cubic-bezier(0.77, 0, 0.18, 1) both; }
+@keyframes reveal-ink {
+  0%, 49.9% { color: transparent; }
+  50%, 100% { color: var(--reveal-ink, var(--text)); }
+}
+@keyframes reveal-block {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+  50.01% { transform: scaleX(1); transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .monogram-draw path { animation: none; stroke-dashoffset: 0; }

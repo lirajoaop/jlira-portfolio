@@ -4,6 +4,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import { FlowExplorer } from "./FlowExplorer";
 import { ProjectGallery } from "./ProjectGallery";
 import { StackExplorer } from "./StackExplorer";
+import { RevealTitles } from "./RevealTitles";
 import { blockLabel, ButtonLink, Icon, Monogram, Section, Tag } from "./ui";
 
 export function Home({ locale }: { locale: Locale }) {
@@ -22,7 +23,7 @@ export function Home({ locale }: { locale: Locale }) {
             ))}
           </div>
         </Section>
-        <Section id="stack" label={c.stack.label} title={c.stack.title}>
+        <Section id="stack" label={c.stack.label} title={c.stack.title} soft>
           <StackExplorer groups={c.stack.groups} hint={c.stack.hint} coreLabel={c.stack.coreLabel} />
         </Section>
         <Section id="formacao" label={c.learning.label} title={c.learning.title}>
@@ -37,6 +38,7 @@ export function Home({ locale }: { locale: Locale }) {
         <Contact locale={locale} />
       </main>
       <Footer locale={locale} />
+      <RevealTitles />
     </>
   );
 }
@@ -315,39 +317,38 @@ function About({ locale }: { locale: Locale }) {
 }
 
 /* ---------- Contact ---------- */
+/** Closing band in the hero's color, so the page opens and ends on the same identity. */
 function Contact({ locale }: { locale: Locale }) {
   const c = content[locale];
   const k = c.contact;
   return (
-    <section id="contato" aria-labelledby="contato-title" className="mx-auto max-w-6xl border-t border-line px-4 py-16 sm:px-6 sm:py-24">
-      <div>
-        <div>
-          <h2 id="contato-title" className="text-4xl font-black tracking-[-0.03em] text-balance sm:text-5xl">{k.title}</h2>
-          <p className="mt-3 max-w-[60ch] text-lg leading-relaxed text-muted text-pretty">{k.body}</p>
-          <a href={`mailto:${site.email}`} className="mt-8 inline-block text-xl font-bold break-all text-accent underline decoration-2 underline-offset-[6px] hover:decoration-4 sm:text-2xl">
-            {site.email}
-          </a>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href={site.linkedin} variant="ghost" external>
-              <Icon.linkedin /> LinkedIn
-            </ButtonLink>
-            <ButtonLink href={site.github} variant="ghost" external>
-              <Icon.github /> GitHub
-            </ButtonLink>
-            <ButtonLink href={site.cv[locale]} variant="ghost" download>
-              <Icon.down /> {c.ui.cv}
-            </ButtonLink>
-          </div>
+    <div className="bg-band text-band-ink">
+      <section id="contato" aria-labelledby="contato-title" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+        <h2 id="contato-title" className="reveal text-4xl font-black tracking-[-0.03em] text-balance [--reveal-block:var(--band-deep)] [--reveal-ink:var(--band-ink)] sm:text-5xl">{k.title}</h2>
+        <p className="mt-3 max-w-[60ch] text-lg leading-relaxed text-pretty">{k.body}</p>
+        <a href={`mailto:${site.email}`} className="mt-8 inline-block rounded-sm text-xl font-bold break-all underline decoration-band-ink/60 decoration-2 underline-offset-[6px] hover:decoration-band-ink hover:decoration-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-band-ink sm:text-2xl">
+          {site.email}
+        </a>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ButtonLink href={site.linkedin} variant="band" external>
+            <Icon.linkedin /> LinkedIn
+          </ButtonLink>
+          <ButtonLink href={site.github} variant="band" external>
+            <Icon.github /> GitHub
+          </ButtonLink>
+          <ButtonLink href={site.cv[locale]} variant="band" download>
+            <Icon.down /> {c.ui.cv}
+          </ButtonLink>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 
 function Footer({ locale }: { locale: Locale }) {
   const c = content[locale];
   return (
-    <footer className="border-t border-line">
+    <footer>
       <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <p className="flex items-center gap-2">
           <Monogram className="size-5" /> © {new Date().getFullYear()} {site.name}

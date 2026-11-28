@@ -1,17 +1,18 @@
 import type { ReactNode } from "react";
 
-/** Page section: one heading block on top (title, muted subtitle, optional lead), content below at full width. */
-export function Section({ id, label, title, children, lead }: { id: string; label: string; title: string; lead?: string; children: ReactNode }) {
-  return (
-    <section id={id} aria-labelledby={`${id}-title`} className="mx-auto max-w-6xl border-t border-line px-4 first:border-t-0 py-16 sm:px-6 sm:py-24">
+/** Page section: one heading block on top (title, muted subtitle, optional lead), content below at full width. `soft` puts it on a full-width tinted band. */
+export function Section({ id, label, title, children, lead, soft }: { id: string; label: string; title: string; lead?: string; soft?: boolean; children: ReactNode }) {
+  const section = (
+    <section id={id} aria-labelledby={`${id}-title`} className={`mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 ${soft ? "" : "border-t border-line first:border-t-0"}`}>
       <header className="max-w-[68ch]">
-        <h2 id={`${id}-title`} className="text-4xl font-black tracking-[-0.03em] text-balance sm:text-5xl">{label}</h2>
+        <h2 id={`${id}-title`} className="reveal text-4xl font-black tracking-[-0.03em] text-balance sm:text-5xl">{label}</h2>
         <p className="mt-3 text-lg text-muted text-pretty">{title}</p>
         {lead && <p className="mt-2 leading-relaxed text-muted text-pretty">{lead}</p>}
       </header>
       <div className="mt-10 min-w-0 sm:mt-12">{children}</div>
     </section>
   );
+  return soft ? <div className="bg-surface-2">{section}</div> : section;
 }
 
 /** Small accent label that names a block inside a section (e.g. "Problem", "Technical decisions"). */
@@ -21,12 +22,13 @@ export function Tag({ children }: { children: ReactNode }) {
   return <span className="inline-flex items-center rounded-md bg-surface-2 px-2 py-0.5 text-sm text-fg">{children}</span>;
 }
 
-export function ButtonLink({ href, children, variant = "primary", external, download }: { href: string; children: ReactNode; variant?: "primary" | "ghost"; external?: boolean; download?: boolean }) {
-  const base = "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent";
-  const styles =
-    variant === "primary"
-      ? "bg-accent text-white hover:brightness-110 [[data-theme=dark]_&]:text-[#04212b]"
-      : "border border-line text-fg hover:border-accent hover:text-accent";
+export function ButtonLink({ href, children, variant = "primary", external, download }: { href: string; children: ReactNode; variant?: "primary" | "ghost" | "band"; external?: boolean; download?: boolean }) {
+  const base = "inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-[15px] font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2";
+  const styles = {
+    primary: "bg-accent text-white hover:brightness-110 focus-visible:outline-accent [[data-theme=dark]_&]:text-[#04212b]",
+    ghost: "border border-line text-fg hover:border-accent hover:text-accent focus-visible:outline-accent",
+    band: "border border-band-ink/60 text-band-ink hover:bg-band-ink hover:text-band focus-visible:outline-band-ink",
+  }[variant];
   return (
     <a href={href} className={`${base} ${styles}`} {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})} {...(download ? { download: "" } : {})}>
       {children}
